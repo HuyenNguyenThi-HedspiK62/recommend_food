@@ -1,0 +1,30 @@
+@media (min-width: 1201px) {
+	.main_body h2{
+	font-family: open sans;
+}
+	.main-body h1{
+		font-family: open sans;
+		text-align: center;
+	}
+	.main_body p{
+		font-family: open sans;
+		font-size: 15px;
+	}
+
+	.main_body .img-responsive{
+		height: 350px;
+		width: 350px;
+		border-radius: 10px;
+	}
+	.main_body .col-md-5{
+		padding: 30px 0px;
+	}
+	footer h2{
+		font-family: BigNoodleTitling;
+	}
+}
+footer{
+	border-top: 1px solid black;
+}
+
+ 
