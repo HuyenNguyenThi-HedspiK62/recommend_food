@@ -115,14 +115,14 @@
                     <h1 style="font-family: open sans; text-align: center;">{{$f->name}}</h1>
                         <h2 style="font-family: open sans;">Nguyên liệu</h2>
                         <p style="font-family: open sans;">
-                            <!-- Cá đối 2kg <br>
+                            Cá đối 2kg <br>
                             Thịt ba chỉ 0.5kg <br>
                             Mía 0.5 cây <br>
                             Riềng 0,3kg <br>
                             Nước mía 1 ly <br>
                             500ml nước lọc <br>
                             Đường thắng nước hàng <br>
-                            Hạt tiêu xanh, ớt, nước mắm <br> -->
+                            Hạt tiêu xanh, ớt, nước mắm <br>
                         </p>
                         <h2 style = "font-family: open sans;">Cách chế biến</h2>
                         <p style="font-family: open sans;">

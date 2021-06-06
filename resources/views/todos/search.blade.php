@@ -30,8 +30,8 @@
 							<div class="topnav" id="myTopnav">
 							<ul>
 								<li><a href="/">Home</a></li>
-								<li><a class="active" href="tab1.html">HAD SOMETHING</a></li>
-								<li><a href="tab2">EAT ANYTHING</a></li>
+								<li><a href="/todos/tab1">HAD SOMETHING</a></li>
+								<li><a href="/todos/tab2">EAT ANYTHING</a></li>
 								<li><a a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a></li>
 							</ul>
 						</div>
@@ -55,7 +55,7 @@
 				</div>
 				<div class="search_box">
 				<form role="search" method="get" id="searchform" action="search">
-					<div style="position: relative;" class="form-group has-feedback">
+					<div style="position: relative; font-family: open sans;" class="form-group has-feedback">
                         <input style="background: #f2f2f2; height: 50px; font-size: 28px;border-radius: 20px;" type="text" name="key" class="form-control" placeholder="Search">
                         <button style="border: none; position: absolute; top:15px;right:30px;font-size: 28px;color:black" class="glyphicon glyphicon-search"></button>
                     </div>
@@ -70,10 +70,10 @@
 				</div>
 				<div class="image">
 					<ul>
-					@foreach($mean as $means)
-					<li><a href="/todos/food/{{$means->id}}"><img src="/asset/image/{{$means->image}}" class="img-responsive"></a></li>
+					@foreach($mean as $means)	
+						<li><a href="/todos/food/{{$means->id}}"><img src="/asset/image/{{$means->image}}" class="img-responsive"></a></li>
 					@endforeach
-					</ul>
+					</ul>	 
 				</div>
 				<div class="row_link">{{$mean->links()}}</div>
 			</div>
@@ -85,8 +85,8 @@
 				</div>
 				<div class="image">
 					<ul>
-					@foreach($spe as $spes)
-					<li><a href="/todos/food/{{$spes->id}}"><img src="/asset/image/{{$spes->image}}" class="img-responsive"></a></li>
+					@foreach($spe as $spes)	
+						<li><a href="/todos/food/{{$spes->id}}"><img src="/asset/image/{{$spes->image}}" class="img-responsive"></a></li>
 					@endforeach
 					</ul>
 				</div>
@@ -100,8 +100,8 @@
 				</div>
 				<div class="image">
 					<ul>
-					@foreach($chay as $chays)
-					<li><a href="/todos/food/{{$chays->id}}"><img src="/asset/image/{{$chays->image}}" class="img-responsive"></a></li>
+					@foreach($chay as $chays)	
+						<li><a href="/todos/food/{{$chays->id}}"><img src="/asset/image/{{$chays->image}}" class="img-responsive"></a></li>
 					@endforeach
 					</ul>
 				</div>
