@@ -17,6 +17,7 @@ class CreateNguyenlieuTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('luong');
+            $table->longText('description');
             $table->timestamps();
         });
     }

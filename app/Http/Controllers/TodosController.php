@@ -66,7 +66,6 @@ class TodosController extends Controller
                             ['name', 'like', '%'.$req->key.'%'],
                             ['type_id', 3]]);
         })->paginate(4);
-        //dd($spe);
         return view('todos.search', compact('mean', 'spe', 'chay'));
     }
 
