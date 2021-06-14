@@ -9,6 +9,9 @@ use App\Mean;
 use App\Food;
 use App\Type;
 use App\MeanFood;
+use App\Nguyelieu;
+use App\Nguyenlieu;
+
 class TodosController extends Controller
 {
     //Do du lieu ra tab1
@@ -26,6 +29,7 @@ class TodosController extends Controller
         $chay = Mean::where('type_id', 3)->paginate(4);
         return view('todos.tab2',compact('mean','spe','chay'));
     } 
+
     //tu tab 1
     public function Tab2(){
         return view('tab2');
@@ -33,6 +37,7 @@ class TodosController extends Controller
     public function tab1getHomePage(){
         return view('welcome');
     }
+
     //tu tab2
     public function Tab1(){
         return view('tab1');
@@ -49,6 +54,33 @@ class TodosController extends Controller
         return view('welcome', compact('type1','type2','type3'));
     }
 
+    //show món ăn mà user post lên
+    public function showpost(Request $request){
+        $tenmon = $request->tenmon;
+        $tennguyenlieu = $request->tennguyenlieu;
+        $luong = $request->luong;
+        $cachnau = $request->cachnau;
+        if($request->hasFile('image')){
+            $hinhanh = $request->file('image');
+            $hinhanh_name = $hinhanh->getClientOriginalName('image');
+            //echo $hinhanh_name;
+            $hinhanh->move('asset/image', $hinhanh_name);
+        }else{
+            echo "Chua co file anh";
+        }
+
+        $nguyenlieu = new Nguyenlieu();
+        $nguyenlieu->name = $tennguyenlieu;
+        $nguyenlieu->luong = $luong;
+        $nguyenlieu->save();
+        $monan = new Food();
+        $monan->name = $tenmon;
+        $monan->description = $cachnau;
+        $monan->image = $hinhanh_name; 
+        $monan->save();
+        return view('todos.post', compact('tenmon', 'tennguyenlieu', 'luong', 'cachnau', 'hinhanh_name'));
+    }
+    
     //Tim kiem hien thi bua an chua mon an
     public function getsearch(Request $req){
         $mean = Mean::whereHas('food', function ($query) use($req){

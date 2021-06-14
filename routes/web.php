@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 /*
@@ -26,9 +26,13 @@ Route::get('/', 'TodosController@tab2getHomepage');
 Route::get('todos/search', 'TodosController@getsearch');
 Route::get('search_food', 'TodosController@getsearchfood');
 Route::get('todos/food/{stt}', 'TodosController@getFood');
-
 Route::get('/', 'TodosController@getdata');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('upload', function(){
+    return view('todos.post');
+});
+
+Route::post('post', ['as'=>'post', 'uses'=>'TodosController@showpost']);
