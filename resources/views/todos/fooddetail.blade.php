@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Đã có nguyên liệu</title>
+	<title>Food Page</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="{{asset('asset/bootstrap-3.1.1-dist/css/bootstrap.min.css')}}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('asset/bootstrap-3.1.1-dist/css/bootstrap.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('asset/bootstrap-3.1.1-dist/css/bootstrap.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('asset/bootstrap-3.1.1-dist/css/bootstrap-theme.css.map')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('asset/bootstrap-3.1.1-dist/css/bootstrap.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('asset/css/style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('asset/css/responsive.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('asset/css/food.css')}}">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
@@ -32,97 +34,45 @@
 								<li><a href="/">Home</a></li>
 								<li><a href="/todos/tab1">HAD SOMETHING</a></li>
 								<li><a href="/todos/tab2">EAT ANYTHING</a></li>
-								<li><a a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a></li>
+								<li><a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a></li>
 							</ul>
 						</div>
 						</div>
 					</div>						
 				</div>
-		</div>
-		<div class = "banner-header">
-			<div class = "container">
-				<div class = "header-title">
-					<h1>HAD <font color="blue">SOME</font>THING</h1>
-				</div>
 			</div>
 		</div>
 	</div>
-	<div class = "selection">
-		<div class="search">
-			<div class="container">
-				<div class="search_text">
-					<p>What is in your fridge?</p>
+	<div class = "main_body">
+		<div class="container">
+			<div class="row">
+                @foreach($food as $f)
+				<div class="col-md-5" style="padding-bottom: 50px;">
+					<img class = "img_responsive" style="height: 350px; width: 350px; border-radius: 10px;" src="/asset/image/{{$f->image}}">
 				</div>
-				<div class="search_box">
-				<form role="search" method="get" id="searchform" action="search">
-					<div style="position: relative; font-family: open sans;" class="form-group has-feedback">
-                        <input style="background: #f2f2f2; height: 50px; font-size: 28px;border-radius: 20px;" type="text" name="key" class="form-control" placeholder="Search">
-                        <button style="border: none; position: absolute; top:15px;right:30px;font-size: 28px;color:black" class="glyphicon glyphicon-search"></button>
-                    </div>
-				</form>
+				<div class="col-md-7" style="padding-bottom: 50px;">
+				<h1 style="font-family: open sans; text-align: center;">{{$f->name}}</h1>
+					<h2>Nguyên liệu</h2>
+						<table style="font-size: 20px;">
+                        <tr>
+                            <th style="padding-right: 150px; font-family:  monospace;">Tên Nguyên Liệu</th>
+                            <th style="font-family: monospace;">Khối lượng nguyên liệu</th>
+                        </tr> 
+                        @foreach($nguyenlieu as $nguyenlieus)
+                        <tr>
+							<td><a href="/todos/food/{{$f->id}}" style="font-family:monospace; color: black;">{{ $nguyenlieus->name }}</a></td>
+                            <td><a href="/todos/food/{{$f->id}}" style="font-family:monospace; color: black;">{{ $nguyenlieus->luong }}</a></td>
+                        </tr>
+                        @endforeach
+                        </table>
+					<h2>Cách chế biến</h2>
+					<p>
+						{{$f->description}}
+					</p>
 				</div>
+                @endforeach
 			</div>	
-		</div>
-		<div class = selection1>
-			<div class = "container">
-				<div class = "text">
-					<h1>Full nutritious meal</h1>
-				</div>
-				<div class="image">
-					<ul>
-					@foreach($mean as $means)	
-						<li><a href="/todos/food/{{$means->id}}"><img src="/asset/image/{{$means->image}}" class="img-responsive"></a></li>
-					@endforeach
-					</ul>	 
-				</div>
-				<div class="row_link">{{$mean->links()}}</div>
-			</div>
-		</div>
-		<div class = selection2>
-			<div class = "container">
-				<div class = "text">
-					<h1>Special occasion</h1>
-				</div>
-				<div class="image">
-					<ul>
-					@foreach($spe as $spes)	
-						<li><a href="/todos/food/{{$spes->id}}"><img src="/asset/image/{{$spes->image}}" class="img-responsive"></a></li>
-					@endforeach
-					</ul>
-				</div>
-				<div class="row_link">{{$spe->links()}}</div>
-			</div>
-		</div>
-		<div class = selection3>
-			<div class = "container">
-				<div class = "text">
-					<h1>Vegetarian</h1>
-				</div>
-				<div class="image">
-					<ul>
-					@foreach($chay as $chays)	
-						<li><a href="/todos/food/{{$chays->id}}"><img src="/asset/image/{{$chays->image}}" class="img-responsive"></a></li>
-					@endforeach
-					</ul>
-				</div>
-				<div class="row_link">{{$chay->links()}}</div>
-			</div>
-		</div>
-		<div class = selection3>
-			<div class = "container">
-				<div class = "text">
-					<h1>Suggest Meals</h1>
-				</div>
-				<div class="image">
-					<ul>
-					@foreach($foods as $food)	
-						<li><a href="/todos/fooddetail/{{$food->id}}"><img src="/asset/image/{{$food->image}}" class="img-responsive"></a></li>
-					@endforeach
-					</ul>
-				</div>
-				<div class="row_link">{{$foods->links()}}</div>
-			</div>
-		</div>
+		</div>	
 	</div>
 	<script>
 		function myFunction() {

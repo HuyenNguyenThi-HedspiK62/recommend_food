@@ -53,16 +53,18 @@
 				<div class="col-md-7" style="padding-bottom: 50px;">
 				<h1 style="font-family: open sans; text-align: center;">{{$f->name}}</h1>
 					<h2>Nguyên liệu</h2>
-					<p>
-						Cá đối 2kg <br>
-						Thịt ba chỉ 0.5kg <br>
-						Mía 0.5 cây <br>
-						Riềng 0,3kg <br>
-						Nước mía 1 ly <br>
-						500ml nước lọc <br>
-						Đường thắng nước hàng <br>
-						Hạt tiêu xanh, ớt, nước mắm <br>
-					</p>
+						<table style="font-size: 20px;">
+                        <tr>
+                            <th style="padding-right: 150px; font-family:  monospace;">Tên Nguyên Liệu</th>
+                            <th style="font-family: monospace;">Khối lượng nguyên liệu</th>
+                        </tr> 
+                        @foreach($f->nguyenlieu as $nguyenlieus)
+                        <tr>
+							<td><a href="/todos/food/{{$f->id}}" style="font-family:monospace; color: black;">{{ $nguyenlieus->name }}</a></td>
+                            <td><a href="/todos/food/{{$f->id}}" style="font-family:monospace; color: black;">{{ $nguyenlieus->luong }}</a></td>
+                        </tr>
+                        @endforeach
+                        </table>
 					<h2>Cách chế biến</h2>
 					<p>
 						{{$f->description}}

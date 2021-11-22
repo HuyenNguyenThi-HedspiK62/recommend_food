@@ -9,7 +9,6 @@ use App\Mean;
 use App\Food;
 use App\Type;
 use App\MeanFood;
-use App\Nguyelieu;
 use App\Nguyenlieu;
 
 class TodosController extends Controller
@@ -70,7 +69,7 @@ class TodosController extends Controller
         }
 
         $nguyenlieu = new Nguyenlieu();
-        $nguyenlieu->name = $tennguyenlieu;
+        $nguyenlieu->name = $tennguyenlieu;  
         $nguyenlieu->luong = $luong;
         $nguyenlieu->save();
         $monan = new Food();
@@ -98,7 +97,8 @@ class TodosController extends Controller
                             ['name', 'like', '%'.$req->key.'%'],
                             ['type_id', 3]]);
         })->paginate(4);
-        return view('todos.search', compact('mean', 'spe', 'chay'));
+        $foods = DB::table('foods')->where('name', 'like', '%'.$req->key.'%')->paginate(4);
+        return view('todos.search', compact('mean', 'spe', 'chay', 'foods'));
     }
 
     //Tim kiem hien thi mon an
@@ -114,5 +114,14 @@ class TodosController extends Controller
             $foods[] = Food::where('id',$food_id[$i])->first();
         }
         return view('todos.food', compact('foods'));
+    }
+
+    public function foodDeatail($foodId){
+        $food = Food::where('id', $foodId)->get();
+        $nguyenlieu_id = DB::table('nguyenlieu_foods')->where('food_id', $foodId)->pluck('nguyenlieu_id');
+        for($k = 0; $k < count($nguyenlieu_id); $k++){
+            $nguyenlieu[] = Nguyenlieu::where('id', $nguyenlieu_id[$k])->first();
+        }
+        return view('todos.fooddetail', compact('food', 'nguyenlieu'));
     }
 }
