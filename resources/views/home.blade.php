@@ -48,6 +48,11 @@ h1{
     padding-bottom: 20px;
 }
 
+.col-md-3 {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
 </style>
 <div class="container">
     <div>
@@ -58,7 +63,7 @@ h1{
         {{ csrf_field() }}
             <div class="row">
                 <div class="col-md-3">
-                    <label for="fname">Tên món ăn</label>
+                    <label for="fname">Tên món ăn: </label>
                 </div>
                 <div class="col-md-9">
                     <input type="text" id="fname" name="tenmon" placeholder="Tên món..">
@@ -66,7 +71,7 @@ h1{
             </div>
             <div class="row">
                 <div class="col-md-3">
-                    <label>Tên nguyên liệu</label>
+                    <label>Tên nguyên liệu: </label>
                 </div>
                 <div class="col-md-9">
                     <input type="text" id="lname" name="tennguyenlieu" placeholder="Tên..">
@@ -74,7 +79,7 @@ h1{
             </div>
             <div class="row">
                 <div class="col-md-3">
-                    <label>Lượng(gram)</label>
+                    <label>Lượng(gram): </label>
                 </div>
                 <div class="col-md-9">
                     <input type="text" id="lname" name="luong" placeholder="Lượng..">
@@ -82,7 +87,7 @@ h1{
             </div>
             <div class="row">
                 <div class="col-md-3">
-                    <label for="fname">Cách nấu</label>
+                    <label for="fname">Cách nấu: </label>
                 </div>
                 <div class="col-md-9">
                     <textarea rows="4" style="width: -webkit-fill-available;" type="text" name="cachnau" placeholder="Cách nấu.."></textarea>
@@ -90,7 +95,7 @@ h1{
             </div>
             <div class="row">
                 <div class="col-md-3">
-                    <label for="country">Image</label>
+                    <label for="country">Image: </label>
                 </div>
                 <div class="col-md-9">
                     <input type="file" id="myFile" name="image">

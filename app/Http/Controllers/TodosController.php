@@ -15,17 +15,17 @@ class TodosController extends Controller
 {
     //Do du lieu ra tab1
     public function getTab1(){
-        $mean = Mean::where('type_id', 1)->paginate(4);
-        $spe = Mean::where('type_id', 2)->paginate(4);
-        $chay = Mean::where('type_id', 3)->paginate(4);
+        $mean = Mean::where('type_id', 1)->inRandomOrder()->paginate(4);
+        $spe = Mean::where('type_id', 2)->inRandomOrder()->paginate(4);
+        $chay = Mean::where('type_id', 3)->inRandomOrder()->paginate(4);
         return view('todos.tab1', compact('mean','spe','chay'));
     }
     
     //Do du lieu ra tab2
     public function getTab2(){
-        $mean = Mean::where('type_id', 1)->paginate(4);
-        $spe = Mean::where('type_id', 2)->paginate(4);
-        $chay = Mean::where('type_id', 3)->paginate(4);
+        $mean = Mean::where('type_id', 1)->inRandomOrder()->paginate(4);
+        $spe = Mean::where('type_id', 2)->inRandomOrder()->paginate(4);
+        $chay = Mean::where('type_id', 3)->inRandomOrder()->paginate(4);
         return view('todos.tab2',compact('mean','spe','chay'));
     } 
 
@@ -47,9 +47,9 @@ class TodosController extends Controller
 
     //Do du lieu ra trang chu
     public function getdata(){
-        $type1 = Mean::where('type_id', 1)->paginate(3);
-        $type2 = Mean::where('type_id', 2)->paginate(3);
-        $type3 = Mean::where('type_id', 3)->paginate(3);
+        $type1 = Mean::where('type_id', 1)->inRandomOrder()->paginate(3);
+        $type2 = Mean::where('type_id', 2)->inRandomOrder()->paginate(3);
+        $type3 = Mean::where('type_id', 3)->inRandomOrder()->paginate(3);
         return view('welcome', compact('type1','type2','type3'));
     }
 

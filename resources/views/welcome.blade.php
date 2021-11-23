@@ -116,7 +116,7 @@
                             <h1 style="text-align: center;">ABOUT US</h1>
                             <p>Bữa ăn đầy đủ: Là bữa ăn gồm những món ăn đầy đủ chất dinh dưỡng, có đạm, protein, tinh bột</p>
                             <p>Bữa ăn đặc biệt: Là bữa ăn gồm những món ăn phục vụ chiêu đãi khách, bữa ăn ngày lễ tết</p>
-                            <p>Bữa ăn đặc biệt: Là bữa ăn gồm những món ăn chay, dành cho những người ăn chay trường hoặc gia đình ăn chay vào mùng 1 hoặc ngày rằm</p>
+                            <p>Bữa ăn chay: Là bữa ăn gồm những món ăn chay, dành cho những người ăn chay trường hoặc gia đình ăn chay vào mùng 1 hoặc ngày rằm</p>
                         </div>
                     </div>
                     <div class="col-md-9">
