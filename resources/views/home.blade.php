@@ -17,7 +17,7 @@
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <style>
-input[type=text], select {
+input[type=text], select, textarea {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -25,64 +25,84 @@ input[type=text], select {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    font-family: monospace;
 }
 
-input[type=submit] {
-    width: 100%;
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-input[type=submit]:hover {
-    background-color: #45a049;
+label, input[type=file] {
+    font-family: monospace;
+    font-size: 24px;
 }
 
 div {
     border-radius: 5px;
-    background-color: #f2f2f2;
-    /* padding: 20px; */
+    background-color: white;
 }
+
+.submit-food {
+    padding: 30px 0px 50px 0px;
+    text-align: center;
+}
+
+h1{
+    text-align: center;
+    padding-bottom: 20px;
+}
+
 </style>
 <div class="container">
-    <!-- <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
-        </div>
-    </div> -->
     <div>
-        <h1>Bạn muốn chia sẻ món ăn gì không?</h1>
+        <h1 style="font-family: monospace;">Món ăn của bạn</h1>
     </div>
     <div class="post">
         <form action="{{route('post')}}" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}
-            <label for="fname" style="font-size: 24px;">Tên món ăn</label>
-            <input type="text" id="fname" name="tenmon" placeholder="Tên món..">
-            <label for="lname" style="font-size: 24px;">Nguyên Liệu</label></br>
-            <label>Tên nguyên liệu</label><input type="text" id="lname" name="tennguyenlieu" placeholder="Tên.."></br>
-            <label>Lượng(gram)      </label><input type="text" id="lname" name="luong" placeholder="Lượng.."></br>
-            <label for="fname">Cách nấu</label>
-            <input type="text" name="cachnau" placeholder="Cách nấu..">
-            <label for="country" style="font-size: 24px;">Hình ảnh món ăn</label></br>
-            <input type="file" id="myFile" name="image">
-            <input type="submit" value="Submit">
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="fname">Tên món ăn</label>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" id="fname" name="tenmon" placeholder="Tên món..">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <label>Tên nguyên liệu</label>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" id="lname" name="tennguyenlieu" placeholder="Tên..">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <label>Lượng(gram)</label>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" id="lname" name="luong" placeholder="Lượng..">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="fname">Cách nấu</label>
+                </div>
+                <div class="col-md-9">
+                    <textarea rows="4" style="width: -webkit-fill-available;" type="text" name="cachnau" placeholder="Cách nấu.."></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="country">Image</label>
+                </div>
+                <div class="col-md-9">
+                    <input type="file" id="myFile" name="image">
+                </div>
+            </div>
+            <div class="submit-food">
+                <button type="submit" class="btn btn-success btn-lg">Submit</button>
+            </div>
         </form>
     </div>
 </div>
-<footer>
+<footer style="border-top: 3px solid #f2f2f2;">
 	<div class="main-footer">
 		    <div class="container">
 		    	<div class="row">
