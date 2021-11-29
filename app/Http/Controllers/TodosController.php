@@ -15,17 +15,17 @@ class TodosController extends Controller
 {
     //Do du lieu ra tab1
     public function getTab1(){
-        $mean = Mean::where('type_id', 1)->inRandomOrder()->paginate(4);
-        $spe = Mean::where('type_id', 2)->inRandomOrder()->paginate(4);
-        $chay = Mean::where('type_id', 3)->inRandomOrder()->paginate(4);
+        $mean = Mean::where('type_id', 1)->inRandomOrder()->paginate(4, ['*'], 'meal');
+        $spe = Mean::where('type_id', 2)->inRandomOrder()->paginate(4, ['*'], 'spe');
+        $chay = Mean::where('type_id', 3)->inRandomOrder()->paginate(4, ['*'], 'chay');
         return view('todos.tab1', compact('mean','spe','chay'));
     }
     
     //Do du lieu ra tab2
     public function getTab2(){
-        $mean = Mean::where('type_id', 1)->inRandomOrder()->paginate(4);
-        $spe = Mean::where('type_id', 2)->inRandomOrder()->paginate(4);
-        $chay = Mean::where('type_id', 3)->inRandomOrder()->paginate(4);
+        $mean = Mean::where('type_id', 1)->inRandomOrder()->paginate(4, ['*'], 'meal');
+        $spe = Mean::where('type_id', 2)->inRandomOrder()->paginate(4, ['*'], 'spe');
+        $chay = Mean::where('type_id', 3)->inRandomOrder()->paginate(4, ['*'], 'chay');
         return view('todos.tab2',compact('mean','spe','chay'));
     } 
 
@@ -47,9 +47,9 @@ class TodosController extends Controller
 
     //Do du lieu ra trang chu
     public function getdata(){
-        $type1 = Mean::where('type_id', 1)->inRandomOrder()->paginate(3);
-        $type2 = Mean::where('type_id', 2)->inRandomOrder()->paginate(3);
-        $type3 = Mean::where('type_id', 3)->inRandomOrder()->paginate(3);
+        $type1 = Mean::where('type_id', 1)->inRandomOrder()->paginate(3, ['*'], 'meal');
+        $type2 = Mean::where('type_id', 2)->inRandomOrder()->paginate(3, ['*'], 'spe');
+        $type3 = Mean::where('type_id', 3)->inRandomOrder()->paginate(3, ['*'], 'chay');
         return view('welcome', compact('type1','type2','type3'));
     }
 
@@ -116,12 +116,20 @@ class TodosController extends Controller
         return view('todos.food', compact('foods'));
     }
 
-    public function foodDeatail($foodId){
+    public function foodDetail($foodId){
         $food = Food::where('id', $foodId)->get();
         $nguyenlieu_id = DB::table('nguyenlieu_foods')->where('food_id', $foodId)->pluck('nguyenlieu_id');
         for($k = 0; $k < count($nguyenlieu_id); $k++){
             $nguyenlieu[] = Nguyenlieu::where('id', $nguyenlieu_id[$k])->first();
         }
         return view('todos.fooddetail', compact('food', 'nguyenlieu'));
+    }
+
+    public function getFoodfromNguyenlieu($foodId, $nguyenlieuId){
+        $foodId = DB::table('nguyenlieu_foods')->where('nguyenlieu_id', $nguyenlieuId)->pluck('food_id');
+        for($k = 0; $k < count($foodId); $k++){
+            $foods[] = Food::where('id', $foodId[$k])->first();
+        }
+        return view('todos.food', compact('foods'));
     }
 }

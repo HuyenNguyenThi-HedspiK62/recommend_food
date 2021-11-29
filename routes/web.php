@@ -26,7 +26,8 @@ Route::get('/', 'TodosController@tab2getHomepage');
 Route::get('todos/search', 'TodosController@getsearch');
 Route::get('search_food', 'TodosController@getsearchfood');
 Route::get('todos/food/{stt}', 'TodosController@getFood');
-Route::get('todos/fooddetail/{foodId}', 'TodosController@foodDeatail');
+Route::get('todos/food/{stt}/{nguyenlieuId}', 'TodosController@getFoodfromNguyenlieu');
+Route::get('todos/fooddetail/{foodId}', 'TodosController@foodDetail');
 Route::get('/', 'TodosController@getdata');
 Auth::routes();
 

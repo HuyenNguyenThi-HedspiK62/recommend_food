@@ -121,8 +121,8 @@
                         </tr> 
                         @foreach($f->nguyenlieu as $nguyenlieus)
                         <tr>
-							<td><a href="/todos/food/{{$f->id}}" style="font-family:monospace; color: black;">{{ $nguyenlieus->name }}</a></td>
-                            <td><a href="/todos/food/{{$f->id}}" style="font-family:monospace; color: black;">{{ $nguyenlieus->luong }}</a></td>
+							<td><a href="/todos/food/{{$f->id}}/{{$nguyenlieus->id}}" style="font-family:monospace; color: black;">{{ $nguyenlieus->name }}</a></td>
+                            <td style="font-family:monospace; color: black;">{{ $nguyenlieus->luong }}</td>
                         </tr>
                         @endforeach
                         </table>
