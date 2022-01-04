@@ -6,68 +6,77 @@
 4. Styles for devices(>=481px and <=767px)
 5. Styles for devices(<=480px)
 -------------------------------------------------------------------*/
+
+
 /*----------------
 [1. Styles for devices(>1200px)]
 */
+
 @media (min-width: 1201px) {
-    .img-responsive{
-		height: 214px;
-		width: 214px;
-	}
+    .img-responsive {
+        height: 214px;
+        width: 214px;
+    }
 }
+
 
 /*----------------
 [2. Styles for devices(>=992px and <=1199px)]
 */
-@media (min-width: 993px) and (max-width: 1200px){
-    div.main-header .col-md-7 li a{
+
+@media (min-width: 993px) and (max-width: 1200px) {
+    div.main-header .col-md-7 li a {
         font-size: 35px;
         padding: 0 20px;
     }
-    div .img-responsive{
+    div .img-responsive {
         max-width: 110%;
     }
-    .img-responsive{
-		height: 186px;
-		width: 186px;
-	}
+    .img-responsive {
+        height: 186px;
+        width: 186px;
+    }
 }
+
 
 /*----------------
 [3. Styles for devices(>=768px and <=992px)]
 */
+
 @media (min-width: 768px) and (max-width: 992px) {
-    div .header-title h1{
+    div .header-title h1 {
         font-size: 40px;
         padding-top: 0px;
     }
-    div .banner-header{
+    div .banner-header {
         height: 250px;
         padding-top: 80px;
     }
-    div .main-header .col-md-7 li a{
+    div .main-header .col-md-7 li a {
         padding: 0 10px;
         font-size: 30px;
     }
-    div .main-header .col-md-5 h1{
+    div .main-header .col-md-5 h1 {
         font-size: 30px;
     }
-    div .main-header .col-md-5 p{
+    div .main-header .col-md-5 p {
         font-size: 20px;
         letter-spacing: 19px;
     }
-    .img-responsive{
-		height: 186px;
-		width: 186px;
-	}
+    .img-responsive {
+        height: 186px;
+        width: 186px;
+    }
 }
+
 
 /*----------------
 [4.Styles for devices(>=481px and <=767px)]
 */
+
 @media (min-width: 481px) and (max-width: 767px) {
     /* For mobile phones: */
-    div .col-md-7 li a{
+    div .col-md-7 li a {
         display: none;
     }
     div .col-md-7 a.icon {
@@ -89,58 +98,60 @@
         padding: 0px 20px;
         font-size: 20px;
     }
-    div .topnav.responsive li{
+    div .topnav.responsive li {
         padding: 0px;
     }
-    div .img-responsive{
+    div .img-responsive {
         margin: 0;
         max-width: 160%;
     }
-    div .text h1{
+    div .text h1 {
         font-size: 30px;
     }
-    div .pager a{
+    div .pager a {
         font-size: 15px;
         margin: 0 20px;
         letter-spacing: 2px;
         padding: 2px 5px;
     }
-    div .banner-header{
+    div .banner-header {
         height: 250px;
     }
-    div .banner-header h1{
+    div .banner-header h1 {
         padding-top: 85px;
         font-size: 50px;
     }
-    div .col-md-5 p{
+    div .col-md-5 p {
         letter-spacing: 17px;
     }
-    div .col-md-5{
+    div .col-md-5 {
         max-width: 50%;
     }
-    div .col-md-7{
+    div .col-md-7 {
         max-width: 50%;
     }
     div .main-header li:last-child a {
-    padding: 0px 90px;
+        padding: 0px 90px;
     }
-    .img-responsive{
-		height: 106px;
-		width: 106px;
-	}
+    .img-responsive {
+        height: 106px;
+        width: 106px;
+    }
 }
+
 
 /*----------------
 [5. Styles for devices(<=480px)]
 */
+
 @media (max-width: 480px) {
-    div .col-md-5{
+    div .col-md-5 {
         max-width: 50%;
     }
-    div .col-md-7{
+    div .col-md-7 {
         max-width: 50%;
     }
-    div .topnav a{
+    div .topnav a {
         display: none;
     }
     div .topnav li a.icon {
@@ -162,27 +173,28 @@
         padding: 0px 20px;
         font-size: 20px;
     }
-    div .topnav.responsive li{
+    div .topnav.responsive li {
         padding: 0px;
     }
     div .main-header li:last-child a {
         padding: 0px 60px;
     }
-    div .banner-header h1{
+    div .banner-header h1 {
         padding-top: 100px;
     }
-    div .text h1{
+    div .text h1 {
         margin: 20px 10px 0px 0px;
     }
-    div .image li:not(:first-child){
+    div .image li:not(:first-child) {
         display: none;
     }
-    div .image img{
+    div .image img {
         margin: 0px;
     }
-    div .image li{
+    div .image li {
         padding: 10px 60px;
     }
 }
+
 
 /*----------------

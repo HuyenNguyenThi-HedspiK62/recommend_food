@@ -24,7 +24,7 @@
             i++;
             $('#dynamic_field').append('<tr id="row' + i +
                 '"><td><input type="text" name="name[]" placeholder="Tên Nguyên Liệu" class="name_list" /></td><td><input type="text" id="lname" name="luong" placeholder="Lượng.."></td><td><button type="button" name="remove" id="' +
-                i + '" class="btn btn-danger btn_remove">X</button></td></tr>');
+                i + '" class="btn btn-danger btn_remove">Remove</button></td></tr>');
         });
         $(document).on('click', '.btn_remove', function() {
             var button_id = $(this).attr("id");
@@ -55,6 +55,10 @@ textarea {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    font-family: monospace;
+}
+
+button {
     font-family: monospace;
 }
 
@@ -90,28 +94,32 @@ h1 {
         <h1 style="font-family: monospace;">Món ăn của bạn</h1>
     </div>
     <div class="post">
-        <form action="{{route('post')}}" method="post" enctype="multipart/form-data">
-            {{ csrf_field() }}
+        <form action="{{route('showpost')}}" method="post" enctype="multipart/form-data">
+            @csrf
             <div class="row">
                 <div class="col-md-3">
-                    <label for="fname">Tên món ăn: </label>
+                    <label for="fname">Tên món ăn: <span style="color: red" class="pl-2">*</span></label>
                 </div>
                 <div class="col-md-9">
-                    <input type="text" id="fname" name="tenmon" placeholder="Tên món..">
+                    <input type="text" id="fname" name="tenmon" placeholder="Tên món.."
+                        class="@error('tenmon') is-invalid @enderror">
+                    @error('tenmon')
+                    <span class="text-danger">{{$message}}</span>
+                    @enderror
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-3">
-                    <label for="fname">Thành Phần: </label>
+                    <label for="fname">Thành Phần: <span style="color: red" class="pl-2">*</span></label>
                 </div>
                 <div class="col-md-9">
                     <form name="add_name" id="add_name">
                         <div class="table-responsive">
                             <table class="table table-bordered" id="dynamic_field">
                                 <tr>
-                                    <td><input type="text" name="name[]" placeholder="Tên Nguyên Liệu.."
+                                    <td><input type="text" name="tennguyenlieu[]" placeholder="Tên Nguyên Liệu.."
                                             class="name_list"></td>
-                                    <td><input type="text" id="lname" name="luong" placeholder="Lượng.."></td>
+                                    <td><input type="text" id="lname" name="luong[]" placeholder="Lượng.."></td>
                                     <td><button type="button" name="add" id="add" class="btn btn-success">Add
                                             More</button>
                                     </td>
@@ -123,16 +131,19 @@ h1 {
             </div>
             <div class="row">
                 <div class="col-md-3">
-                    <label for="fname">Cách nấu: </label>
+                    <label for="fname">Cách nấu: <span style="color: red" class="pl-2">*</span></label>
                 </div>
                 <div class="col-md-9">
                     <textarea rows="4" style="width: -webkit-fill-available;" type="text" name="cachnau"
-                        placeholder="Cách nấu.."></textarea>
+                        placeholder="Cách nấu.." class="@error('cachnau') is-invalid @enderror"></textarea>
+                    @error('cachnau')
+                    <span class="text-danger">{{$message}}</span>
+                    @enderror
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-3">
-                    <label for="country">Image: </label>
+                    <label for="country">Image: <span style="color: red" class="pl-2">*</span></label>
                 </div>
                 <div class="col-md-9">
                     <input type="file" id="myFile" name="image">
@@ -187,4 +198,5 @@ h1 {
         </div>
     </div>
 </footer>
+
 @endsection

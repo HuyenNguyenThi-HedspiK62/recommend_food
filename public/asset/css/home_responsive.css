@@ -6,173 +6,183 @@
 4. Styles for devices(>=481px and <=767px)
 5. Styles for devices(<=480px)
 -------------------------------------------------------------------*/
+
+
 /*----------------
 [1. Styles for devices(>1200px)]
 */
+
 @media (min-width: 1201px) {
-	.img-responsive{
-		height: 240px;
-		width: 240px;
-	}
+    .img-responsive {
+        height: 240px;
+        width: 240px;
+    }
 }
+
 
 /*----------------
 [2. Styles for devices(>=992px and <=1199px)]
 */
-@media (min-width: 993px) and (max-width: 1200px){
-	div.main-header .col-md-7 li a{
-		font-size: 35px;
-		padding: 0 20px;
-	}
-	.img-responsive{
-		height: 240px;
-		width: 240px;
-	}
+
+@media (min-width: 993px) and (max-width: 1200px) {
+    div.main-header .col-md-7 li a {
+        font-size: 35px;
+        padding: 0 20px;
+    }
+    .img-responsive {
+        height: 240px;
+        width: 240px;
+    }
 }
+
 
 /*----------------
 [3. Styles for devices(>=768px and <=992px)]
 */
+
 @media (min-width: 768px) and (max-width: 992px) {
-	div .main-header .col-md-7 li a{
-		padding: 0 15px;
-		font-size: 30px;
-	}
-	div .main-header .col-md-5 h1{
-		font-size: 30px;
-	}
-	div .main-header .col-md-5 p{
-		font-size: 20px;
-		letter-spacing: 19px;
-	}
-	div .header-title h1{
-		font-size: 40px;
-		padding: 0px;
-	}
-	div .banner-header{
-		height: 250px;
-		padding-top: 60px;
-	}
-	.img-responsive{
-		height: 135px;
-    	width: 135px;
-	}
+    div .main-header .col-md-7 li a {
+        padding: 0 15px;
+        font-size: 30px;
+    }
+    div .main-header .col-md-5 h1 {
+        font-size: 30px;
+    }
+    div .main-header .col-md-5 p {
+        font-size: 20px;
+        letter-spacing: 19px;
+    }
+    div .header-title h1 {
+        font-size: 40px;
+        padding: 0px;
+    }
+    div .banner-header {
+        height: 250px;
+        padding-top: 60px;
+    }
+    .img-responsive {
+        height: 135px;
+        width: 135px;
+    }
 }
+
 
 /*----------------
 [4.Styles for devices(>=481px and <=767px)]
 */
+
 @media (min-width: 481px) and (max-width: 767px) {
-	/* For mobile phones: */
-  	div .topnav a{
-  		display: none;
-  	}
-  	div .topnav li a.icon {
-    	float: right;
-    	display: block;
-  	}
-  	div .topnav.responsive {
-  		position: relative;
-  	}
-  	div .topnav.responsive .icon {
-    	position: absolute;
-    	right: 0;
-    	top: 0;
-  	}
-  	div .topnav.responsive li a {
-    	float: none;
-    	display: block;
-    	text-align: left;
-      padding: 0px 20px;
+    /* For mobile phones: */
+    div .topnav a {
+        display: none;
+    }
+    div .topnav li a.icon {
+        float: right;
+        display: block;
+    }
+    div .topnav.responsive {
+        position: relative;
+    }
+    div .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    div .topnav.responsive li a {
+        float: none;
+        display: block;
+        text-align: left;
+        padding: 0px 20px;
         font-size: 20px;
     }
-    div .topnav.responsive li{
+    div .topnav.responsive li {
         padding: 0px;
-  	}
-  	div .text h1{
-    	font-size: 30px;
     }
-  	div .col-md-5 p{
-    	letter-spacing: 17px;
+    div .text h1 {
+        font-size: 30px;
     }
-    div .col-md-5{
-    	max-width: 50%;
+    div .col-md-5 p {
+        letter-spacing: 17px;
     }
-    div .col-md-7{
-    	max-width: 50%;
+    div .col-md-5 {
+        max-width: 50%;
+    }
+    div .col-md-7 {
+        max-width: 50%;
     }
     div .main-header li:last-child a {
-    	padding: 0px 90px;
-	}
-	div .header-title h1{
-		font-size: 60px;
-    	letter-spacing: 5px;
-	}
-	div .main-body .col-md-3{
-		display: none;
-	}
-	div .main-body .img li:first-child{
-		padding-left: 0px;
-	}
-	.img-responsive{
-		height: 144px;
-    	width: 144px;
-	}	 
+        padding: 0px 90px;
+    }
+    div .header-title h1 {
+        font-size: 60px;
+        letter-spacing: 5px;
+    }
+    div .main-body .col-md-3 {
+        display: none;
+    }
+    div .main-body .img li:first-child {
+        padding-left: 0px;
+    }
+    .img-responsive {
+        height: 144px;
+        width: 144px;
+    }
 }
+
 
 /*----------------
 [5. Styles for devices(<=480px)]
 */
+
 @media (max-width: 480px) {
-	div .col-md-5{
-    	max-width: 50%;
+    div .col-md-5 {
+        max-width: 50%;
     }
-    div .col-md-7{
-    	max-width: 50%;
+    div .col-md-7 {
+        max-width: 50%;
     }
-	div .topnav a{
-  		display: none;
+    div .topnav a {
+        display: none;
     }
-  	div .topnav li a.icon {
-    	float: right;
-    	display: block;
+    div .topnav li a.icon {
+        float: right;
+        display: block;
     }
-  	div .topnav.responsive {
-  		position: relative;
+    div .topnav.responsive {
+        position: relative;
     }
-  	div .topnav.responsive .icon {
-    	position: absolute;
-    	right: 0;
-    	top: 0;
+    div .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
     }
-  	div .topnav.responsive li a {
-    	float: none;
-    	display: block;
-    	text-align: left;
-      padding: 0px 20px;
+    div .topnav.responsive li a {
+        float: none;
+        display: block;
+        text-align: left;
+        padding: 0px 20px;
         font-size: 20px;
     }
-    div .topnav.responsive li{
+    div .topnav.responsive li {
         padding: 0px;
-    
     }
-  	div .main-header li:last-child a {
-    	padding: 0px 60px;
-	}
-	div .header-title h1{
-		font-size: 60px;
-    	letter-spacing: 5px;
-	}
-	div .main-body .col-md-3{
-		display: none;
-	}
-	div .main-body .img li:first-child{
-		padding-left: 0px;
-	}
-	.img-responsive{
-		height: 120px;
-    	width: 120px;
-	}	
+    div .main-header li:last-child a {
+        padding: 0px 60px;
+    }
+    div .header-title h1 {
+        font-size: 60px;
+        letter-spacing: 5px;
+    }
+    div .main-body .col-md-3 {
+        display: none;
+    }
+    div .main-body .img li:first-child {
+        padding-left: 0px;
+    }
+    .img-responsive {
+        height: 120px;
+        width: 120px;
+    }
 }
 
 
