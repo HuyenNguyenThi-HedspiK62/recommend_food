@@ -64,6 +64,17 @@
                 <div class="header-title">
                     <h1>EAT <font color="blue">ANY</font>THING</h1>
                 </div>
+                <div class="search_box">
+                    <form role="search" method="get" id="searchform" action="search_food">
+                        <div style="position: relative; font-family: open sans;" class="form-group has-feedback">
+                            <input style="background: #f2f2f2; height: 50px; font-size: 28px;border-radius: 20px;"
+                                type="text" name="key" class="form-control" placeholder="Search">
+                            <button
+                                style="border: none; position: absolute; top:15px;right:30px;font-size: 28px;color:black"
+                                class="glyphicon glyphicon-search"></button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

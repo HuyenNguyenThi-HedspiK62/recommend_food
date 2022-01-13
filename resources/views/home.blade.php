@@ -23,7 +23,7 @@
         $('#add').click(function() {
             i++;
             $('#dynamic_field').append('<tr id="row' + i +
-                '"><td><input type="text" name="name[]" placeholder="Tên Nguyên Liệu" class="name_list" /></td><td><input type="text" id="lname" name="luong" placeholder="Lượng.."></td><td><button type="button" name="remove" id="' +
+                '"><td><input type="text" name="tennguyenlieu[]" placeholder="Tên Nguyên Liệu" class="name_list" /></td><td><input type="text" id="lname" name="luong[]" placeholder="Lượng.."></td><td><button type="button" name="remove" id="' +
                 i + '" class="btn btn-danger btn_remove">Remove</button></td></tr>');
         });
         $(document).on('click', '.btn_remove', function() {
@@ -88,6 +88,10 @@ h1 {
     justify-content: end;
     align-items: center;
 }
+.text-danger {
+    font-family: monospace;
+    font-size: 23px;
+}
 </style>
 <div class="container">
     <div>
@@ -113,7 +117,7 @@ h1 {
                     <label for="fname">Thành Phần: <span style="color: red" class="pl-2">*</span></label>
                 </div>
                 <div class="col-md-9">
-                    <form name="add_name" id="add_name">
+                    <div name="add_name" id="add_name">
                         <div class="table-responsive">
                             <table class="table table-bordered" id="dynamic_field">
                                 <tr>
@@ -126,7 +130,7 @@ h1 {
                                 </tr>
                             </table>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -146,7 +150,10 @@ h1 {
                     <label for="country">Image: <span style="color: red" class="pl-2">*</span></label>
                 </div>
                 <div class="col-md-9">
-                    <input type="file" id="myFile" name="image">
+                    <input type="file" id="myFile" name="image" class="@error('image') is-invalid @enderror">
+                    @error('image')
+                    <span class="text-danger">{{$message}}</span>
+                    @enderror
                 </div>
             </div>
             <div class="submit-food">

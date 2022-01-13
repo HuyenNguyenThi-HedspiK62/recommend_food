@@ -65,16 +65,19 @@ class TodosController extends Controller
     //show món ăn mà user post lên
     public function showpost(Request $request)
     {
+        //dd($request);
         $validate = Validator::make(
             $request->all(),
             [
                 'tenmon' => 'required|string|max:225',
-                'cachnau' => 'required|string'
+                'cachnau' => 'required|string',
+                'image' => 'required'
             ],
             [
                 'tenmon.required'    => 'Hãy nhập Tên món ăn',
                 'tenmon.max'         => 'Tên món ăn quá dài',
-                'cachnau.required'   => 'Hãy nhập Cách nấu món ăn'
+                'cachnau.required'   => 'Hãy nhập Cách nấu món ăn',
+                'image.required'     => 'Hãy post ảnh của món ăn'
             ]
         );
         if ($validate->fails()) {
@@ -82,14 +85,12 @@ class TodosController extends Controller
         } else {
             $tennguyenlieu = $request->tennguyenlieu;
             $luong = $request->luong;
-            if ($request->hasFile('image')) {
-                $hinhanh = $request->file('image');
-                $hinhanh_name = $hinhanh->getClientOriginalName('image');
-                $hinhanh->move('asset/image', $hinhanh_name);
-            } else {
-                echo "Chua co file anh";
-            }
 
+            $hinhanh = $request->file('image');
+            $hinhanh_name = $hinhanh->getClientOriginalName('image');
+            $hinhanh->move('asset/image', $hinhanh_name);
+
+            dd($tennguyenlieu);
             $nguyenlieu = new Nguyenlieu();
             $nguyenlieu->name = $tennguyenlieu;
             $nguyenlieu->luong = $luong;
@@ -133,6 +134,16 @@ class TodosController extends Controller
     public function getsearchfood(Request $req)
     {
         $foods = Food::where('name', 'like', '%' . $req->key . '%')->get();
+        return view('search_food', compact('foods'));
+    }
+
+    public function getsearchngl(Request $request)
+    {
+        //dd($request->tennguyenlieu);
+        foreach($request->tennguyenlieu as $ngl){
+            $food_id = DB::table('nguyenlieu_foods') -> where('nguyenlieu_id', $ngl)->pluck('food_id');
+            $foods = DB::table('foods')->where('id', $food_id)->first();
+        }
         return view('search_food', compact('foods'));
     }
 

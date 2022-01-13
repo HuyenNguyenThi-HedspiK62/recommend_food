@@ -18,24 +18,25 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('todos/tab1', 'TodosController@getTab1');
-Route::get('todos/tab2', 'TodosController@getTab2');
-Route::get('tab1', 'TodosController@Tab1');
-Route::get('tab2', 'TodosController@Tab2');
-Route::get('/', 'TodosController@tab1getHomepage');
-Route::get('/', 'TodosController@tab2getHomepage');
-Route::get('todos/search', 'TodosController@getsearch');
-Route::get('search_food', 'TodosController@getsearchfood');
-Route::get('todos/food/{stt}', 'TodosController@getFood');
-Route::get('todos/food/{stt}/{nguyenlieuId}', 'TodosController@getFoodfromNguyenlieu');
-Route::get('todos/fooddetail/{foodId}', 'TodosController@foodDetail');
-Route::get('/', 'TodosController@getdata');
+Route::get('todos/tab1', [App\Http\Controllers\TodosController::class, 'getTab1']);
+Route::get('todos/tab2', [App\Http\Controllers\TodosController::class, 'getTab2']);
+Route::get('tab1', [App\Http\Controllers\TodosController::class, 'Tab1']);
+Route::get('tab2', [App\Http\Controllers\TodosController::class, 'Tab2']);
+Route::get('/', [App\Http\Controllers\TodosController::class, 'tab1getHomepage']);
+Route::get('/', [App\Http\Controllers\TodosController::class, 'tab2getHomepage']);
+Route::get('todos/search', [App\Http\Controllers\TodosController::class, 'getsearch']);
+Route::get('todos/search_food', [App\Http\Controllers\TodosController::class, 'getsearchfood'])->name('search_food');
+Route::get('search_ngl', [App\Http\Controllers\TodosController::class, 'getsearchngl'])->name('search_ngl');
+Route::get('todos/food/{stt}', [App\Http\Controllers\TodosController::class, 'getFood']);
+Route::get('todos/food/{stt}/{nguyenlieuId}', [App\Http\Controllers\TodosController::class, 'getFoodfromNguyenlieu']);
+Route::get('todos/fooddetail/{foodId}', [App\Http\Controllers\TodosController::class, 'foodDetail']);
+Route::get('/', [App\Http\Controllers\TodosController::class, 'getdata']);
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('upload', function () {
     return view('todos.post');
 });
 
-Route::post('/post', [App\Http\Controllers\TodoController::class, 'showpost'])->name('showpost');
+Route::post('/post', [App\Http\Controllers\TodosController::class, 'showpost'])->name('showpost');

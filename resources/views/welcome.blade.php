@@ -72,23 +72,8 @@
             </div>
         </div>
         <div class="banner-header">
-            <div class="container">
-                <div class="header-title">
-                    <h1>
-                        <font color="blue">WHAT IS FOR DINNER?</font>
-                    </h1>
-                </div>
-                <div class="search_box">
-                    <form role="search" method="get" id="searchform" action="search_food">
-                        <div style="position: relative; font-family: open sans;" class="form-group has-feedback">
-                            <input style="background: #f2f2f2; height: 50px; font-size: 28px;border-radius: 20px;"
-                                type="text" name="key" class="form-control" placeholder="Search">
-                            <button
-                                style="border: none; position: absolute; top:15px;right:30px;font-size: 28px;color:black"
-                                class="glyphicon glyphicon-search"></button>
-                        </div>
-                    </form>
-                </div>
+            <div class="header-title">
+                <h1>WHAT<font color="blue"> IS FOR </font>DINNER?</h1>
             </div>
         </div>
         <div class="main-body">
@@ -99,15 +84,15 @@
                             <h1 style="text-align: center;">WHAT<font color="blue">ISFOR</font> DINNER?</h1>
                         </div>
                         <div style="font-family: monospace;">
-                            <form method="get" id="searchform" action="search_food">
-                                <select style="font-family: monospace;" class="selectpicker" multiple
+                            <form method="get" id="searchform" action="search_ngl">
+                                <select name="tennguyenlieu[]" style="font-family: monospace;" class="selectpicker" multiple
                                     data-live-search="true">
                                     @foreach($nguyenlieu as $ngl)
-                                    <option style="font-family: monospace;">{{$ngl->name}}</option>
+                                    <option value="{{$ngl->id}}" style="font-family: monospace;">{{$ngl->name}}</option>
                                     @endforeach
                                 </select>
                                 <div style="text-align: center; padding-top: 20px; font-family: monospace;">
-                                    <button type="button" class="btn btn-success">Submit</button>
+                                    <button type="submit" class="btn btn-success">Submit</button>
                                 </div>
                             </form>
                         </div>

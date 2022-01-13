@@ -14,8 +14,8 @@
     <link rel="stylesheet" type="text/css" href="{{asset('asset/bootstrap-3.1.1-dist/css/bootstrap.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('asset/bootstrap-3.1.1-dist/css/bootstrap-theme.css.map')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('asset/bootstrap-3.1.1-dist/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('asset/css/homestyle.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('asset/css/home_responsive.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('asset/css/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('asset/css/responsive.css')}}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
@@ -53,9 +53,9 @@
                     <div class="col-md-7">
                         <div class="topnav" id="myTopnav">
                             <ul>
-                                <li><a class="active" href="/">Home</a></li>
+                                <li><a href="/">Home</a></li>
                                 <li><a href="/todos/tab1">HAD SOMETHING</a></li>
-                                <li><a href="/todos/tab2">EAT ANYTHING</a></li>
+                                <li><a class="active" href="/todos/tab2">EAT ANYTHING</a></li>
                                 <li><a href="javascript:void(0);" class="icon" onclick="myFunction()">
                                         <i class="fa fa-bars"></i>
                                     </a></li>
@@ -68,9 +68,7 @@
         <div class="banner-header">
             <div class="container">
                 <div class="header-title">
-                    <h1>
-                        <font color="blue">WHAT IS FOR DINNER?</font>
-                    </h1>
+                    <h1>EAT <font color="blue">ANY</font>THING</h1>
                 </div>
                 <div class="search_box">
                     <form role="search" method="get" id="searchform" action="search_food">
@@ -130,7 +128,7 @@
         }
     }
     </script>
-    <footer>
+    <footer style="border-top: 1px solid black">
         <div class="main-footer">
             <div class="container">
                 <div class="row">
