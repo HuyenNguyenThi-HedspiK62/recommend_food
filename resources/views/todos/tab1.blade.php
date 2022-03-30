@@ -60,11 +60,7 @@
             </div>
         </div>
         <div class="banner-header">
-            <div class="container">
-                <div class="header-title">
-                    <h1>HAD <font color="blue">SOME</font>THING</h1>
-                </div>
-            </div>
+            <h1>HAD <font color="blue">SOME</font>THING</h1>
         </div>
     </div>
     <div class="selection">

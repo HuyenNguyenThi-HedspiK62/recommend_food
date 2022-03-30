@@ -91,14 +91,19 @@
                 <div class="text">
                     <h1>Full nutritious meal</h1>
                 </div>
+                @if ($mean->isEmpty())
+                    <p style="color: red; text-align: center; font-family: monospace; font-size: 20px; font-weight: bold;">Không có bữa ăn phù hợp</p>
+                @else
                 <div class="image">
-                    <ul>
-                        @foreach($mean as $means)
-                        <li><a href="/todos/food/{{$means->id}}"><img src="/asset/image/{{$means->image}}"
-                                    class="img-responsive"></a></li>
-                        @endforeach
-                    </ul>
+                @foreach($mean as $means)
+                    <div style="margin-right: 30px;">
+                        <a href="/todos/food/{{$means->id}}"><img src="/asset/image/{{$means->image}}"
+                                class="img-responsive">
+                        </a>
+                    </div>
+                @endforeach
                 </div>
+                @endif
                 <div class="row_link">{{$mean->links()}}</div>
             </div>
         </div>
@@ -106,15 +111,20 @@
             <div class="container">
                 <div class="text">
                     <h1>Special occasion</h1>
-                </div>
+                </div>                
+                @if ($spe->isEmpty())
+                    <p style="color: red; text-align: center; font-family: monospace; font-size: 20px; font-weight: bold;">Không có bữa ăn phù hợp</p>
+                @else
                 <div class="image">
-                    <ul>
-                        @foreach($spe as $spes)
-                        <li><a href="/todos/food/{{$spes->id}}"><img src="/asset/image/{{$spes->image}}"
-                                    class="img-responsive"></a></li>
-                        @endforeach
-                    </ul>
+                @foreach($spe as $spes) 
+                    <div style="margin-right: 30px;">
+                        <a href="/todos/food/{{$spes->id}}"><img src="/asset/image/{{$spes->image}}"
+                                class="img-responsive">
+                        </a>
+                    </div>
+                @endforeach
                 </div>
+                @endif                   
                 <div class="row_link">{{$spe->links()}}</div>
             </div>
         </div>
@@ -123,29 +133,43 @@
                 <div class="text">
                     <h1>Vegetarian</h1>
                 </div>
+                @if ($chay->isEmpty())
+                    <div>
+                        <p style="color: red; text-align: center; font-family: monospace; font-size: 20px; font-weight: bold;">Không có bữa ăn phù hợp</p>
+                    </div>
+                @else
                 <div class="image">
-                    <ul>
-                        @foreach($chay as $chays)
-                        <li><a href="/todos/food/{{$chays->id}}"><img src="/asset/image/{{$chays->image}}"
-                                    class="img-responsive"></a></li>
-                        @endforeach
-                    </ul>
+                @foreach($chay as $chays)
+                    <div style="margin-right: 30px;">
+                        <a href="/todos/food/{{$chays->id}}"><img src="/asset/image/{{$chays->image}}"
+                                class="img-responsive">
+                        </a>
+                    </div>
+                @endforeach
                 </div>
+                @endif
                 <div class="row_link">{{$chay->links()}}</div>
             </div>
         </div>
-        <div class=selection3>
+        <div class=selection4>
             <div class="container">
                 <div class="text">
                     <h1>Suggest Meals</h1>
                 </div>
-                <div class="image">
-                    <ul>
-                        @foreach($foods as $food)
-                        <li><a href="/todos/fooddetail/{{$food->id}}"><img src="/asset/image/{{$food->image}}"
-                                    class="img-responsive"></a></li>
-                        @endforeach
-                    </ul>
+                <div>
+                    @if ($foods->isEmpty())
+                        <div style="color: red; text-align: center; font-family: monospace; font-size: 20px; font-weight: bold;">Không có món ăn được đề xuất</div>
+                    @else
+                    @foreach($foods as $food)
+                        <div class="image">
+                            <div style="margin-right: 30px;">
+                                <a href="/todos/fooddetail/{{$food->id}}"><img src="/asset/image/{{$food->image}}"
+                                        style="margin-bottom: 10px;" class="img-responsive"></a>
+                                <p style="font-family: monospace; font-size: 17px; font-weight: bold;">{{$food->name}}</p>
+                            </div>
+                        <div>
+                    @endforeach
+                    @endif
                 </div>
                 <div class="row_link">{{$foods->links()}}</div>
             </div>
@@ -162,7 +186,7 @@
     }
     </script>
 </body>
-<footer>
+<footer style="border-top: 1px solid black;">
     <div class="main-footer">
         <div class="container">
             <div class="row">

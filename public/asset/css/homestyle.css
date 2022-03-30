@@ -23,7 +23,6 @@ body {
     color: #636b6f;
     padding: 0 25px;
     font-size: 20px;
-    font-family: open sans;
     font-weight: 600;
     letter-spacing: .1rem;
     text-decoration: none;
@@ -81,6 +80,10 @@ header {
     font-size: 35px;
     padding: 0 30px;
 }
+.col-md-9 .text h1{
+    letter-spacing: 5px;
+    text-align: center;
+}
 
 .col-md-7 .active {
     background-color: #d9534f;
@@ -98,8 +101,6 @@ header {
 
 .banner-header h1 {
     margin: 0px;
-    text-align: center;
-    padding: 50px 0px;
     color: #5f5f5f;
     font-size: 70px;
     line-height: 75px;
@@ -109,6 +110,9 @@ header {
 
 .banner-header {
     height: 365px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-image: url("../image/bannerhome.jpg");
     border-bottom: 1px solid black;
 }

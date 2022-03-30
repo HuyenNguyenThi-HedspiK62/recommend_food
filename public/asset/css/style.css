@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: open sans;
+    font-family: monospace;
 }
 
 @font-face {
@@ -75,7 +75,6 @@ header {
     color: #636b6f;
     padding: 0 25px;
     font-size: 20px;
-    font-family: open sans;
     font-weight: 600;
     letter-spacing: .1rem;
     text-decoration: none;
@@ -102,18 +101,19 @@ header {
 
 .banner-header h1 {
     margin: 0px;
-    text-align: center;
-    padding-top: 100px;
-    padding-bottom: 50px;
     color: #5f5f5f;
     font-size: 70px;
     line-height: 75px;
     letter-spacing: 10px;
     word-spacing: 5px;
+    text-align: center;
 }
 
 .banner-header {
     height: 365px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-image: url("../image/banner1.jpg");
     border-bottom: 1px solid black;
 }
@@ -148,6 +148,10 @@ header {
 
 .selection3 {
     border-bottom: 1px solid black;
+}
+
+.image {
+    display: flex;
 }
 
 .image ul {

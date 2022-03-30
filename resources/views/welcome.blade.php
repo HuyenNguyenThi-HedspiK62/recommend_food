@@ -72,9 +72,7 @@
             </div>
         </div>
         <div class="banner-header">
-            <div class="header-title">
-                <h1>WHAT<font color="blue"> IS FOR </font>DINNER?</h1>
-            </div>
+            <h1>WHAT<font color="blue"> IS FOR </font>DINNER?</h1>
         </div>
         <div class="main-body">
             <div class="container">
@@ -98,6 +96,9 @@
                         </div>
                     </div>
                     <div class="col-md-9">
+                        <div class="text">
+                            <h1>Full nutritious meal</h1>
+                        </div>
                         <div class="img">
                             <ul>
                                 @foreach($type1 as $type_1)
@@ -106,7 +107,10 @@
                                 @endforeach
                             </ul>
                         </div>
-                        <div class="row_link">{{$type1->links()}}</div>
+                        <div style="border-bottom: 1px solid black;" class="row_link">{{$type1->links()}}</div>
+                        <div class="text">
+                            <h1>Special occasion</h1>
+                        </div>
                         <div class="img">
                             <ul>
                                 @foreach($type2 as $type_2)
@@ -115,7 +119,10 @@
                                 @endforeach
                             </ul>
                         </div>
-                        <div class="row_link">{{$type2->links()}}</div>
+                        <div style="border-bottom: 1px solid black;" class="row_link">{{$type2->links()}}</div>
+                        <div class="text">
+                            <h1>Vegetarian</h1>
+                        </div>
                         <div class="img">
                             <ul>
                                 @foreach($type3 as $type_3)
