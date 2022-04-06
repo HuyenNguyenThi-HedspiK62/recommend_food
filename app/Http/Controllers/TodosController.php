@@ -137,8 +137,7 @@ class TodosController extends Controller
     public function getsearchngl(Request $request)
     {
         $food_id = DB::table('nguyenlieu_foods') -> whereIn('nguyenlieu_id', $request->tennguyenlieu)->get('food_id');
-        //dd($food_id);
-            //$foods = DB::table('foods')->where('id', $food_id)->first();
+        dd($food_id);
         $foods = DB::table('foods')->where('id', $food_id)->get();
         dd($foods);
         return view('search_food', compact('foods'));

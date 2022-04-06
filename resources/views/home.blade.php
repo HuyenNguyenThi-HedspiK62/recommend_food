@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-
+<div class="container">
+    <a class="showpost_button" href="/home/{{$user->id}}">YOUR FOODS</a>
+</div>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">

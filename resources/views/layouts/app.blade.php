@@ -82,7 +82,6 @@
                         @endguest
                     </ul>
                 </div>
-                <a style="font-family: monospace; font-size: 20px; color:black;" href="/home/{{$user->id}}">YOUR FOODS</a>
             </div>
         </nav>
 
