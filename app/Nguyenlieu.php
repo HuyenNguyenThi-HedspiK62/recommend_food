@@ -9,6 +9,7 @@ class Nguyenlieu extends Model
 {
     //
     protected $table = 'nguyenlieu';
+    protected $fillable = ['name', 'luong'];
     public $primaryKey = 'id';
     public $timestamps = true;
 

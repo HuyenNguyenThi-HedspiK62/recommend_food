@@ -16,8 +16,8 @@ class CreateNguyenlieuTable extends Migration
         Schema::create('nguyenlieu', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('luong');
-            $table->longText('description');
+            $table->string('luong')->nullable('Tùy chỉnh');
+            $table->longText('description')->nullable('Null');
             $table->timestamps();
         });
     }

@@ -34,6 +34,7 @@ Route::get('/', [App\Http\Controllers\TodosController::class, 'getdata']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home/{id}', [App\Http\Controllers\HomeController::class, 'showallpost'])->name('showallpost');
 
 Route::get('upload', function () {
     return view('todos.post');

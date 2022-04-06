@@ -3,15 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use App\Mean;
 use App\Food;
-use App\Type;
-use App\MeanFood;
 use App\Nguyenlieu;
-
+use App\User;
 class TodosController extends Controller
 {
     //Do du lieu ra tab1
@@ -65,7 +63,7 @@ class TodosController extends Controller
     //show món ăn mà user post lên
     public function showpost(Request $request)
     {
-        //dd($request);
+       
         $validate = Validator::make(
             $request->all(),
             [
@@ -83,25 +81,24 @@ class TodosController extends Controller
         if ($validate->fails()) {
             return redirect()->back()->withInput()->withErrors($validate);
         } else {
-            $tennguyenlieu = $request->tennguyenlieu;
-            $luong = $request->luong;
-
             $hinhanh = $request->file('image');
             $hinhanh_name = $hinhanh->getClientOriginalName('image');
             $hinhanh->move('asset/image', $hinhanh_name);
-
-            dd($tennguyenlieu);
-            $nguyenlieu = new Nguyenlieu();
-            $nguyenlieu->name = $tennguyenlieu;
-            $nguyenlieu->luong = $luong;
-            $nguyenlieu->save();
             $monan = new Food();
             $monan->name = $request->tenmon;;
             $monan->description = $request->cachnau;
             $monan->image = $hinhanh_name;
             $monan->save();
-
-            return view('todos.post', compact('tenmon', 'tennguyenlieu', 'luong', 'cachnau', 'hinhanh_name'));
+            $user = Auth::user();
+            $monan->users()->attach($user->id);
+            for($i=0; $i<sizeof($request->tennguyenlieu); ++$i){
+                $nguyenlieu_id = Nguyenlieu::firstorCreate(
+                    ['name' => $request->tennguyenlieu[$i],
+                    'luong' => $request->luong[$i]]
+                    )->id;
+                $monan->nguyenlieu()->attach($nguyenlieu_id);
+            }
+            return view('todos.post', compact('monan'));
         }
     }
 
@@ -139,11 +136,11 @@ class TodosController extends Controller
 
     public function getsearchngl(Request $request)
     {
-        //dd($request->tennguyenlieu);
-        foreach($request->tennguyenlieu as $ngl){
-            $food_id = DB::table('nguyenlieu_foods') -> where('nguyenlieu_id', $ngl)->pluck('food_id');
-            $foods = DB::table('foods')->where('id', $food_id)->first();
-        }
+        $food_id = DB::table('nguyenlieu_foods') -> whereIn('nguyenlieu_id', $request->tennguyenlieu)->get('food_id');
+        //dd($food_id);
+            //$foods = DB::table('foods')->where('id', $food_id)->first();
+        $foods = DB::table('foods')->where('id', $food_id)->get();
+        dd($foods);
         return view('search_food', compact('foods'));
     }
 

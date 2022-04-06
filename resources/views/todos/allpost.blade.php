@@ -64,34 +64,36 @@
     </div>
     </div>
     <div class="main_body">
-        <div>
-            <h1 style="text-align:center; font-family: monospace; padding: 50px 0px;">MÓN ĂN CỦA BẠN</h1>
-        </div>
         <div class="container">
             <div class="row">
+                @foreach($user->foods as $f)
                 <div class="col-md-5" style="padding-bottom: 50px;">
                     <img class="img_responsive" style="height: 350px; width: 350px; border-radius: 10px;"
-                        src="/asset/image/{{$monan->image}}">
+                        src="/asset/image/{{$f->image}}">
                 </div>
                 <div class="col-md-7" style="padding-bottom: 50px;">
-                    <h1 style="font-family: monospace; text-align: center;">{{$monan->name}}</h1>
+                    <h1 style="font-family: monospace; text-align: center;">{{$f->name}}</h1>
                     <h2 style="font-family: monospace;">Nguyên liệu</h2>
-                    @foreach($monan->nguyenlieu as $nguyenlieus)
-                        <div style="display: flex; justify-content: space-between;">
-                            <a href="/todos/food/{{$monan->id}}/{{$nguyenlieus->id}}"
-                                    style="font-family:monospace; color: black; font-size: 20px;">{{ $nguyenlieus->name }}</a>
-                            <a style="font-family:monospace; color: black; font-size: 20px;">{{ $nguyenlieus->luong }}</a>
-                        </div>
-                    @endforeach
+                    <table style="font-size: 20px;">
+                        <tr>
+                            <th style="padding-right: 150px; font-family: monospace;">Tên Nguyên Liệu</th>
+                            <th style="font-family: monospace;">Khối lượng nguyên liệu</th>
+                        </tr>
+                        @foreach($f->nguyenlieu as $nguyenlieus)
+                        <tr>
+                            <td><a href="/todos/food/{{$f->id}}/{{$nguyenlieus->id}}"
+                                    style="font-family:monospace; color: black;">{{ $nguyenlieus->name }}</a></td>
+                            <td style="font-family:monospace; color: black;">{{ $nguyenlieus->luong }}</td>
+                        </tr>
+                        @endforeach
+                    </table>
                     <h2 style="font-family: monospace;">Cách chế biến</h2>
-                    <p style="font-family: monospace; font-size: 20px;">
-                        {{$monan->description}}
+                    <p style="font-family: monospace; color: black;">
+                        {{$f->description}}
                     </p>
                 </div>
+                @endforeach
             </div>
-        </div>
-        <div>
-            <
         </div>
     </div>
     <script>

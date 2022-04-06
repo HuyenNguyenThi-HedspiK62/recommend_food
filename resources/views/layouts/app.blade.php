@@ -23,7 +23,7 @@
             text-decoration-line: none;
             font-size: 40px;
             padding-left: 40px;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-family: monospace;
         }
         ul{
             list-style: none;
@@ -82,6 +82,7 @@
                         @endguest
                     </ul>
                 </div>
+                <a style="font-family: monospace; font-size: 20px; color:black;" href="/home/{{$user->id}}">YOUR FOODS</a>
             </div>
         </nav>
 
