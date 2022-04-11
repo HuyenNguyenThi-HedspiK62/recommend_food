@@ -131,7 +131,6 @@ class TodosController extends Controller
     public function getsearchfood(Request $req)
     {
         $foods = Food::where('name', 'like', '%' . $req->key . '%')->get();
-        dd($foods);
         return view('search_food', compact('foods'));
     }
 
