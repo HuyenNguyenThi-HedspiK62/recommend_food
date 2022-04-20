@@ -3,8 +3,6 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Mean;
-use App\Nguyenlieu;
 class Food extends Model
 {
     //

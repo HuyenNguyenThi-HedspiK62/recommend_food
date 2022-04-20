@@ -59,7 +59,7 @@
                     <div class="col-md-7">
                         <div class="topnav" id="myTopnav">
                             <ul>
-                                <li><a class="active" href="home.html">Home</a></li>
+                                <li><a class="active" href="/">Home</a></li>
                                 <li><a href="/todos/tab1">HAD SOMETHING</a></li>
                                 <li><a href="/todos/tab2">EAT ANYTHING</a></li>
                                 <li><a href="javascript:void(0);" class="icon" onclick="myFunction()">

@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Validator;
 use App\Mean;
 use App\Food;
 use App\Nguyenlieu;
-use App\User;
 class TodosController extends Controller
 {
     //Do du lieu ra tab1
@@ -137,8 +136,12 @@ class TodosController extends Controller
     public function getsearchngl(Request $request)
     {
         $nguyenlieu = Nguyenlieu::get();
-        $food_id = DB::table('nguyenlieu_foods') -> whereIn('nguyenlieu_id', $request->tennguyenlieu)->pluck('food_id');
-        $foods = Food::where('id', $food_id)->get();
+        $food_id = DB::table('nguyenlieu_foods') 
+                        -> whereIn ('nguyenlieu_id', $request->tennguyenlieu) 
+                        -> groupBy ('food_id') 
+                        -> having (DB::raw('count(food_id)'), '>=', count($request->tennguyenlieu))
+                        -> pluck('food_id');
+        $foods = Food::whereIn('id', $food_id)->get();
         return view('home_search', compact('foods', 'nguyenlieu'));
     }
 
