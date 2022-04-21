@@ -62,7 +62,7 @@ class TodosController extends Controller
     //show món ăn mà user post lên
     public function showpost(Request $request)
     {
-       
+        //dd($request);
         $validate = Validator::make(
             $request->all(),
             [
@@ -91,11 +91,16 @@ class TodosController extends Controller
             $user = Auth::user();
             $monan->users()->attach($user->id);
             for($i=0; $i<sizeof($request->tennguyenlieu); ++$i){
+                $inder_id = Nguyenlieu::where('name', $request->tennguyenlieu[$i])->pluck('id');
+                if(!empty($inder_id)){
+                    $monan->nguyenlieu()->attach($inder_id);
+                }else{
                 $nguyenlieu_id = Nguyenlieu::firstorCreate(
                     ['name' => $request->tennguyenlieu[$i],
                     'luong' => $request->luong[$i]]
                     )->id;
                 $monan->nguyenlieu()->attach($nguyenlieu_id);
+                }
             }
             return view('todos.post', compact('monan'));
         }
