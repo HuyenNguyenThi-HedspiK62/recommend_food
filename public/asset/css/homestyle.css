@@ -175,10 +175,7 @@ img:last-child {
 .img ul {
     display: flex;
     list-style: none;
-}
-
-.img {
-    padding: 20px 20px;
+    justify-content: space-between;
 }
 
 .img-responsive {
@@ -187,10 +184,6 @@ img:last-child {
 
 .row_link nav {
     text-align: center;
-}
-
-.img li {
-    padding-left: 30px;
 }
 
 footer {
@@ -221,6 +214,7 @@ footer .col-md-4--contact a {
 
 .main-footer .col-md-3--contact {
     display: flex;
+    justify-content: space-between;
 }
 
 .main-footer .col-md-3--contact1 {
@@ -229,13 +223,9 @@ footer .col-md-4--contact a {
     width: 44px;
     border-radius: 50%;
     position: relative;
-    margin-right: 10px;
-}
-
-.main-footer .col-md-3--contact1 img {
-    position: absolute;
-    top: 30%;
-    left: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .main-footer .glyphicon {

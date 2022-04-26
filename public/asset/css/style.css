@@ -161,17 +161,13 @@ header {
     border-bottom: 1px solid black;
 }
 
-.image {
-    display: flex;
-}
-
 .image ul {
     display: flex;
     list-style: none;
+    justify-content: space-between;
 }
 
 .selection img {
-    padding-right: 60px;
     margin-bottom: 40px;
     border-radius: 10px;
 }
@@ -219,34 +215,20 @@ footer .col-md-4--contact a {
 
 .main-footer .col-md-3--contact {
     display: flex;
+    justify-content: space-between;
 }
 
 .main-footer .col-md-3--contact1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: #5bc0de;
     height: 44px;
     width: 44px;
     border-radius: 50%;
     position: relative;
-    margin-right: 10px;
-}
-
-.main-footer .col-md-3--contact1 img {
-    position: absolute;
-    top: 30%;
-    left: 35%;
 }
 
 .main-footer .glyphicon {
     padding-right: 5px;
 }
-
-
-/*@media screen and (min-width: 601px) {
-  .text, .banner-header{
-    font-size: 40px;
-  }
-}
-@media screen and (max-width: 600px) {
-  .text .banner-header {
-    font-size: 20px;
-  }*/
