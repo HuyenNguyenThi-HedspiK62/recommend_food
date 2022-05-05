@@ -59,3 +59,21 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## About Project
+Project Name: What is for dinner
+
+To solve the problem of not knowing what to eat tonight, this website was born. When using the website you can search for meals according to your needs. Not only that, it is possible to search for dishes by dish name and ingredient name.
+
+## How to run project in local
+1. Install xampp, git, composer
+2. In xampp/htdocs clone project from github
+3. Move to project folder anf run:
+
+    composer install
+
+    npm install
+4. Copy .env.example .env and create database in phpmyAdmin
+5. Make project key: php artisan key:generate
+6. Make table in database: php artisan migrate
+7. Run project with: php artisan serve
