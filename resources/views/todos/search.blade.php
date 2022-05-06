@@ -26,10 +26,10 @@
             @auth
             <a href="{{ url('/home') }}">{{Auth::user()->name}}</a>
             @else
-            <a href="{{ route('login') }}">Login</a>
+            <a href="{{ route('login') }}">Đăng Nhập</a>
 
             @if (Route::has('register'))
-            <a href="{{ route('register') }}">Register</a>
+            <a href="{{ route('register') }}">Đăng Ký</a>
             @endif
             @endauth
         </div>
@@ -49,9 +49,9 @@
                     <div class="col-md-7">
                         <div class="topnav" id="myTopnav">
                             <ul>
-                                <li><a href="/">Home</a></li>
-                                <li><a href="/todos/tab1">HAD SOMETHING</a></li>
-                                <li><a href="/todos/tab2">EAT ANYTHING</a></li>
+                                <li><a href="/">Trang Chủ</a></li>
+                                <li><a href="/todos/tab1">Có Nguyên Liệu</a></li>
+                                <li><a href="/todos/tab2">Tùy Chọn</a></li>
                                 <li><a a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a></li>
                             </ul>
                         </div>
@@ -62,7 +62,7 @@
         <div class="banner-header">
             <div class="container">
                 <div class="header-title">
-                    <h1>HAD <font color="blue">SOME</font>THING</h1>
+                    <h1>Có <font color="blue">Nguyên Liệu</font></h1>
                 </div>
             </div>
         </div>
@@ -71,7 +71,7 @@
         <div class="search">
             <div class="container">
                 <div class="search_text">
-                    <p>What is in your fridge?</p>
+                    <p>Có Gì Trong Tủ Lạnh Nhà Bạn?</p>
                 </div>
                 <div class="search_box">
                     <form role="search" method="get" id="searchform" action="search">
@@ -89,7 +89,7 @@
         <div class=selection1>
             <div class="container">
                 <div class="text">
-                    <h1>Full nutritious meal</h1>
+                    <h1>Bữa Ăn Ngày Thường</h1>
                 </div>
                 @if ($mean->isEmpty())
                     <p style="color: red; text-align: center; font-family: monospace; font-size: 20px; font-weight: bold;">Không có bữa ăn phù hợp</p>
@@ -110,7 +110,7 @@
         <div class=selection2>
             <div class="container">
                 <div class="text">
-                    <h1>Special occasion</h1>
+                    <h1>Bữa Ăn Dịp Đặc Biệt</h1>
                 </div>                
                 @if ($spe->isEmpty())
                     <p style="color: red; text-align: center; font-family: monospace; font-size: 20px; font-weight: bold;">Không có bữa ăn phù hợp</p>
@@ -131,7 +131,7 @@
         <div class=selection3>
             <div class="container">
                 <div class="text">
-                    <h1>Vegetarian</h1>
+                    <h1>Bữa Chay</h1>
                 </div>
                 @if ($chay->isEmpty())
                     <div>
@@ -154,7 +154,7 @@
         <div class=selection4>
             <div class="container">
                 <div class="text">
-                    <h1>Suggest Meals</h1>
+                    <h1>Đề Xuất Món Ăn</h1>
                 </div>
                 <div>
                     @if ($foods->isEmpty())
@@ -186,7 +186,7 @@
     }
     </script>
 </body>
-<footer style="border-top: 1px solid black;">
+<footer style="border-top: 3px solid #f2f2f2;">
     <div class="main-footer">
         <div class="container">
             <div class="row">
@@ -194,13 +194,13 @@
                     <h2>WHAT<font color="blue">ISFOR</font>DINNER</h2>
                     <address>
                         <ul>
-                            <li><a href="https://www.hust.edu.vn/">Ha Noi University of Science and Technology</a></li>
-                            <li><a href="https://soict.hust.edu.vn/">Student Of Soict</a></li>
+                            <li><a href="https://www.hust.edu.vn/">Đại Học Bách Khoa Hà Nội</a></li>
+                            <li><a href="https://soict.hust.edu.vn/">Hedspi - Viện CNTT&TT</a></li>
                         </ul>
                     </address>
                 </div>
                 <div class="col-md-4">
-                    <h2>SUPPORT</h2>
+                    <h2>Hỗ Trợ</h2>
                     <div class="col-md-4--contact">
 
                         <a href="#" class="btn btn-info btn-lg">
@@ -213,7 +213,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <h2>FOLLOW US</h2>
+                    <h2>Xêm Thêm</h2>
                     <div class="col-md-3--contact">
                         <div class="col-md-3--contact1"><a href="https://www.facebook.com/"><img
                                     src="{{asset('asset/image/face.png')}}"></a></div>

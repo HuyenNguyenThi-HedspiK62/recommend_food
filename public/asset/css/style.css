@@ -1,10 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: BigNoodleTitling;
-}
-
-body {
     font-family: monospace;
 }
 
@@ -47,7 +43,7 @@ header {
 }
 
 .col-md-5 p {
-    letter-spacing: 24px;
+    letter-spacing: 30px;
     font-size: 25px;
 }
 
@@ -66,7 +62,7 @@ header {
 .col-md-7 li a {
     display: block;
     color: black;
-    font-size: 40px;
+    font-size: 24px;
     padding: 0 35px;
 }
 

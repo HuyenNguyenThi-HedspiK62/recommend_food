@@ -26,10 +26,10 @@
             @auth
             <a href="{{ url('/home') }}">{{Auth::user()->name}}</a>
             @else
-            <a href="{{ route('login') }}">Login</a>
+            <a href="{{ route('login') }}">Đăng Nhập</a>
 
             @if (Route::has('register'))
-            <a href="{{ route('register') }}">Register</a>
+            <a href="{{ route('register') }}">Đăng Ký</a>
             @endif
             @endauth
         </div>
@@ -49,9 +49,9 @@
                     <div class="col-md-7">
                         <div class="topnav" id="myTopnav">
                             <ul>
-                                <li><a href="/">Home</a></li>
-                                <li><a href="tab1">HAD SOMETHING</a></li>
-                                <li><a class="active" href="tab2.html">EAT ANYTHING</a></li>
+                                <li><a href="/">Trang Chủ</a></li>
+                                <li><a href="tab1">Có Nguyên Liệu</a></li>
+                                <li><a class="active" href="tab2.html">Tùy Chọn</a></li>
                                 <li><a a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a></li>
                             </ul>
                         </div>
@@ -62,7 +62,7 @@
         <div class="banner-header">
             <div class="container">
                 <div class="header-title">
-                    <h1>EAT <font color="blue">ANY</font>THING</h1>
+                    <h1>Ăn Gì <font color="blue">Cũng Được</font></h1>
                 </div>
                 <div class="search_box">
                     <form role="search" method="get" id="searchform" action="search_food">
@@ -82,7 +82,7 @@
         <div class=selection1>
             <div class="container">
                 <div class="text">
-                    <h1>Full nutritious meal</h1>
+                    <h1>Bữa Ăn Ngày Thường</h1>
                 </div>
                 <div class="image">
                     <ul>
@@ -98,7 +98,7 @@
         <div class=selection2>
             <div class="container">
                 <div class="text">
-                    <h1>Special occasion</h1>
+                    <h1>Bữa Ăn Dịp Đặc Biệt</h1>
                 </div>
                 <div class="image">
                     <ul>
@@ -114,7 +114,7 @@
         <div class=selection3>
             <div class="container">
                 <div class="text">
-                    <h1>Vegetarian</h1>
+                    <h1>Bữa Chay</h1>
                 </div>
                 <div class="image">
                     <ul>
@@ -139,7 +139,7 @@
     }
     </script>
 </body>
-<footer>
+<footer style="border-top: 3px solid #f2f2f2;">
     <div class="main-footer">
         <div class="container">
             <div class="row">
@@ -147,13 +147,13 @@
                     <h2>WHAT<font color="blue">ISFOR</font>DINNER</h2>
                     <address>
                         <ul>
-                            <li><a href="https://www.hust.edu.vn/">Ha Noi University of Science and Technology</a></li>
-                            <li><a href="https://soict.hust.edu.vn/">Student Of Soict</a></li>
+                            <li><a href="https://www.hust.edu.vn/">Đại Học Bách Khoa Hà Nội</a></li>
+                            <li><a href="https://soict.hust.edu.vn/">Hedspi - Viện CNTT&TT</a></li>
                         </ul>
                     </address>
                 </div>
                 <div class="col-md-4">
-                    <h2>SUPPORT</h2>
+                    <h2>Hỗ Trợ</h2>
                     <div class="col-md-4--contact">
 
                         <a href="#" class="btn btn-info btn-lg">
@@ -166,7 +166,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <h2>FOLLOW US</h2>
+                    <h2>Xêm Thêm</h2>
                     <div class="col-md-3--contact">
                         <div class="col-md-3--contact1"><a href="https://www.facebook.com/"><img
                                     src="{{asset('asset/image/face.png')}}"></a></div>

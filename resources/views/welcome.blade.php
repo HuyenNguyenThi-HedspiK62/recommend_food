@@ -36,10 +36,10 @@
             @auth
             <a href="{{ url('/home') }}">{{Auth::user()->name}}</a>
             @else
-            <a href="{{ route('login') }}">Login</a>
+            <a href="{{ route('login') }}">Đăng Nhập</a>
 
             @if (Route::has('register'))
-            <a href="{{ route('register') }}">Register</a>
+            <a href="{{ route('register') }}">Đăng Ký</a>
             @endif
             @endauth
         </div>
@@ -59,9 +59,9 @@
                     <div class="col-md-7">
                         <div class="topnav" id="myTopnav">
                             <ul>
-                                <li><a class="active" href="/">Home</a></li>
-                                <li><a href="/todos/tab1">HAD SOMETHING</a></li>
-                                <li><a href="/todos/tab2">EAT ANYTHING</a></li>
+                                <li><a class="active" href="/">Trang Chủ</a></li>
+                                <li><a href="/todos/tab1">Có Nguyên Liệu</a></li>
+                                <li><a href="/todos/tab2">Tùy Chọn</a></li>
                                 <li><a href="javascript:void(0);" class="icon" onclick="myFunction()">
                                         <i class="fa fa-bars"></i>
                                     </a></li>
@@ -79,7 +79,7 @@
                 <div class="row">
                     <div class="col-md-3">
                         <div class="header-title">
-                            <h1 style="text-align: center;">WHAT<font color="blue">ISFOR</font> DINNER?</h1>
+                            <h3 style="text-align: center;">Tìm Kiếm Theo <font color="blue">Nguyên Liệu</font></h3>
                         </div>
                         <div style="font-family: monospace;">
                             <form method="get" id="searchform" action="search_ngl">
@@ -97,7 +97,7 @@
                     </div>
                     <div class="col-md-9">
                         <div class="text">
-                            <h1>Full nutritious meal</h1>
+                            <h1>Bữa Ăn Ngày Thường</h1>
                         </div>
                         <div class="img">
                             <ul>
@@ -109,7 +109,7 @@
                         </div>
                         <div style="border-bottom: 1px solid black;" class="row_link">{{$type1->links()}}</div>
                         <div class="text">
-                            <h1>Special occasion</h1>
+                            <h1>Bữa Ăn Dịp Đặc Biệt</h1>
                         </div>
                         <div class="img">
                             <ul>
@@ -121,7 +121,7 @@
                         </div>
                         <div style="border-bottom: 1px solid black;" class="row_link">{{$type2->links()}}</div>
                         <div class="text">
-                            <h1>Vegetarian</h1>
+                            <h1>Bữa chay</h1>
                         </div>
                         <div class="img">
                             <ul>
@@ -148,7 +148,7 @@
         $('select').selectpicker();
     }
     </script>
-    <footer>
+    <footer style="border-top: 3px solid #f2f2f2;">
         <div class="main-footer">
             <div class="container">
                 <div class="row">
@@ -156,14 +156,13 @@
                         <h2>WHAT<font color="blue">ISFOR</font>DINNER</h2>
                         <address>
                             <ul>
-                                <li><a href="https://www.hust.edu.vn/">Ha Noi University of Science and Technology</a>
-                                </li>
-                                <li><a href="https://soict.hust.edu.vn/">Student Of Soict</a></li>
+                                <li><a href="https://www.hust.edu.vn/">Đại Học Bách Khoa Hà Nội</a></li>
+                                <li><a href="https://soict.hust.edu.vn/">Hedspi - Viện CNTT&TT</a></li>
                             </ul>
                         </address>
                     </div>
                     <div class="col-md-4">
-                        <h2>SUPPORT</h2>
+                        <h2>Hỗ Trợ</h2>
                         <div class="col-md-4--contact">
 
                             <a href="#" class="btn btn-info btn-lg">
@@ -176,7 +175,7 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <h2>FOLLOW US</h2>
+                        <h2>Xêm Thêm</h2>
                         <div class="col-md-3--contact">
                             <div class="col-md-3--contact1"><a href="https://www.facebook.com/"><img
                                         src="{{asset('asset/image/face.png')}}"></a></div>

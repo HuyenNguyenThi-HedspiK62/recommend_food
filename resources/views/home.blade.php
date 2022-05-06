@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <a class="showpost_button" href="/home/{{$user->id}}">YOUR FOODS</a>
+    <a class="showpost_button" href="/home/{{$user->id}}">Món Ăn Của Bạn</a>
 </div>
 <head>
     <meta charset="utf-8">
@@ -26,7 +26,7 @@
             i++;
             $('#dynamic_field').append('<tr id="row' + i +
                 '"><td><input type="text" name="tennguyenlieu[]" placeholder="Tên Nguyên Liệu" class="name_list" /></td><td><input type="text" id="lname" name="luong[]" placeholder="Lượng.."></td><td><button type="button" name="remove" id="' +
-                i + '" class="btn btn-danger btn_remove">Remove</button></td></tr>');
+                i + '" class="btn btn-danger btn_remove">Xóa</button></td></tr>');
         });
         $(document).on('click', '.btn_remove', function() {
             var button_id = $(this).attr("id");
@@ -126,8 +126,7 @@ h1 {
                                     <td><input type="text" name="tennguyenlieu[]" placeholder="Tên Nguyên Liệu.."
                                             class="name_list"></td>
                                     <td><input type="text" id="lname" name="luong[]" placeholder="Lượng.."></td>
-                                    <td><button type="button" name="add" id="add" class="btn btn-success">Add
-                                            More</button>
+                                    <td><button type="button" name="add" id="add" class="btn btn-success">Thêm</button>
                                     </td>
                                 </tr>
                             </table>
@@ -149,7 +148,7 @@ h1 {
             </div>
             <div class="row">
                 <div class="col-md-3">
-                    <label for="country">Image: <span style="color: red" class="pl-2">*</span></label>
+                    <label for="country">Hình Ảnh: <span style="color: red" class="pl-2">*</span></label>
                 </div>
                 <div class="col-md-9">
                     <input type="file" id="myFile" name="image" class="@error('image') is-invalid @enderror">
@@ -159,7 +158,7 @@ h1 {
                 </div>
             </div>
             <div class="submit-food">
-                <button type="submit" class="btn btn-success btn-lg">Submit</button>
+                <button type="submit" class="btn btn-success btn-lg">Đăng</button>
             </div>
         </form>
     </div>
@@ -172,13 +171,13 @@ h1 {
                     <h2>WHAT<font color="blue">ISFOR</font>DINNER</h2>
                     <address>
                         <ul>
-                            <li><a href="https://www.hust.edu.vn/">Ha Noi University of Science and Technology</a></li>
-                            <li><a href="https://soict.hust.edu.vn/">Student Of Soict</a></li>
+                            <li><a href="https://www.hust.edu.vn/">Đại Học Bách Khoa Hà Nội</a></li>
+                            <li><a href="https://soict.hust.edu.vn/">Hedspi - Viện CNTT&TT</a></li>
                         </ul>
                     </address>
                 </div>
                 <div class="col-md-4">
-                    <h2>SUPPORT</h2>
+                    <h2>Hỗ Trợ</h2>
                     <div class="col-md-4--contact">
 
                         <a href="#" class="btn btn-info btn-lg">
@@ -191,7 +190,7 @@ h1 {
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <h2>FOLLOW US</h2>
+                    <h2>Xêm Thêm</h2>
                     <div class="col-md-3--contact">
                         <div class="col-md-3--contact1"><a href="https://www.facebook.com/"><img
                                     src="{{asset('asset/image/face.png')}}"></a></div>
