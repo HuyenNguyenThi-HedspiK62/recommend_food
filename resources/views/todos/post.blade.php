@@ -27,10 +27,10 @@
             @auth
             <a href="{{ url('/home') }}">{{Auth::user()->name}}</a>
             @else
-            <a href="{{ route('login') }}">Login</a>
+            <a href="{{ route('login') }}">Đăng Ký</a>
 
             @if (Route::has('register'))
-            <a href="{{ route('register') }}">Register</a>
+            <a href="{{ route('register') }}">Đăng Nhập</a>
             @endif
             @endauth
         </div>
@@ -50,9 +50,9 @@
                     <div class="col-md-7">
                         <div class="topnav" id="myTopnav">
                             <ul>
-                                <li><a href="/">Home</a></li>
-                                <li><a href="/todos/tab1">HAD SOMETHING</a></li>
-                                <li><a href="/todos/tab2">EAT ANYTHING</a></li>
+                                <li><a href="/">Trang Chủ</a></li>
+                                <li><a href="/todos/tab1">Có Nguyên Liệu</a></li>
+                                <li><a href="/todos/tab2">Tùy Chọn</a></li>
                                 <li><a href="javascript:void(0);" class="icon" onclick="myFunction()"><i
                                             class="fa fa-bars"></i></a></li>
                             </ul>
