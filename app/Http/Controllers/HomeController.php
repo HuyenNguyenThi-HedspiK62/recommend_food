@@ -28,6 +28,12 @@ class HomeController extends Controller
         return view('home', compact('user'));
     }
 
+    public function showuserfood(){
+        $user = User::all();
+        dd($user);
+        return view('todos.user_food', compact('users'));
+    }
+
     public function showallpost($id){
         $user = User::where('id', $id)->first();
         return view('todos.allpost', compact('user'));

@@ -40,4 +40,9 @@ class User extends Authenticatable
     public function foods(){
         return $this->belongsToMany('App\Food', 'users_foods', 'user_id', 'food_id');
     }
+
+    public function comments(){
+        return $this->belongsToMany('App\Post', 'posts', 'user_id', 'food_id');
+    }
+    
 }

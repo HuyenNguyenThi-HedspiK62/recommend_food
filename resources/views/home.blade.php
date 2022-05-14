@@ -2,7 +2,8 @@
 
 @section('content')
 <div class="container">
-    <a class="showpost_button" href="/home/{{$user->id}}">Món Ăn Của Bạn</a>
+    <div><a class="showpost_button" href="/home/{{$user->id}}">Món Ăn Của Bạn</a></div>
+    <div><a class="showpostuser_button" href="{{route('showuserfood')}}">Món Ăn Của Mọi Người</a></div>
 </div>
 <head>
 @include('includes.head')

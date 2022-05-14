@@ -13,10 +13,10 @@
     <div class="main_body">
         <div class="container">
             <div class="row">
-                @if ($user->foods->isEmpty())
+                @if ($users->foods->isEmpty())
                     <div style="height: 250px; align-items: center; justify-content:center; display:flex;"><p style="color: red; font-family: monospace; font-size: 20px; font-weight: bold;">Bạn chưa đăng món ăn nào!</p></div>
                 @else
-                @foreach($user->foods as $f)
+                @foreach($users->foods as $f)
                 <div class="col-md-5" style="padding: 50px 0px;">
                     <img class="img_responsive" style="height: 350px; width: 350px; border-radius: 10px;"
                         src="/asset/image/{{$f->image}}">
