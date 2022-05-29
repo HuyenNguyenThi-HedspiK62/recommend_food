@@ -3,7 +3,6 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Food;
 class Mean extends Model
 {
     //
@@ -15,5 +14,8 @@ class Mean extends Model
     }
     public function type(){
         return $this->belongsTo('App\Type');
+    }
+    public function comment(){
+        return $this->hasMany('App\Comment');
     }
 }

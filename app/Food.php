@@ -18,4 +18,7 @@ class Food extends Model
     public function users(){
         return $this->belongsToMany('App\User', 'users_foods', 'food_id', 'user_id');
     }
+    public function comments(){
+        return $this->hasMany('App\Comment');
+    }
 }

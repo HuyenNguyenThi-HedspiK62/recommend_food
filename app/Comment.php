@@ -11,7 +11,13 @@ class Comment extends Model
     public $primaryKey = 'id';
     public $timestamps = true;
 
-    public function users(){
-        return $this->belongsToMany('App\User', 'posts', 'food_id', 'user_id');
+    public function user(){
+        return $this->belongsTo('App\User');
+    }
+    public function food(){
+        return $this->belongsTo('App\Food');
+    }
+    public function meal(){
+        return $this->belongsTo('App\Mean');
     }
 }

@@ -42,7 +42,6 @@ class User extends Authenticatable
     }
 
     public function comments(){
-        return $this->belongsToMany('App\Post', 'posts', 'user_id', 'food_id');
+        return $this->hasMany('App\Comment');
     }
-    
 }

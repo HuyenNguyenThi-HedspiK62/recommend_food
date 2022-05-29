@@ -48,18 +48,18 @@ header {
     display: none;
 }
 
-.col-md-5 h1 {
+.main-header .col-md-3 h1 {
     margin-bottom: 0px;
     font-size: 40px;
-    letter-spacing: 5px;
+    letter-spacing: 4px;
 }
 
-.col-md-5 p {
+.main-header .col-md-3 p {
     letter-spacing: 30px;
     font-size: 25px;
 }
 
-.col-md-7 ul {
+.main-header .col-md-9 ul {
     display: flex;
     list-style: none;
     flex-flow: row wrap;
@@ -67,18 +67,18 @@ header {
     padding: 20px 0;
 }
 
-.col-md-7 li {
+.main-header .col-md-9 li {
     padding: 15px 0;
 }
 
-.col-md-7 li a {
+.main-header .col-md-9 li a {
     display: block;
     color: black;
-    font-size: 24px;
+    font-size: 33px;
     padding: 0 35px;
 }
 
-.col-md-7 .active {
+.main-header .col-md-9 .active {
     background-color: #d9534f;
     color: white;
     border-radius: 10px;
@@ -169,19 +169,34 @@ header {
     border-bottom: 1px solid black;
 }
 
+.comments {
+    display: flex;
+    justify-content: space-between;
+}
+
 .image ul {
     display: flex;
     list-style: none;
     justify-content: space-between;
 }
 
-.selection img {
-    margin-bottom: 40px;
-    border-radius: 10px;
+.comment-meal {
+    width: 100%;
+    padding-bottom: 30px;
+    border-bottom: 1px solid black;
 }
 
-.selection .image li {
-    padding-right: 60px;
+.comment-meal:last-child {
+    border-bottom: none;
+}
+
+.comment-meal h1 {
+    margin-bottom: 30px;
+}
+
+.selection img {
+    margin-bottom: 20px;
+    border-radius: 10px;
 }
 
 img:last-child {

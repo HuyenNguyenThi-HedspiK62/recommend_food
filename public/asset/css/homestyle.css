@@ -47,18 +47,18 @@ header {
     border-bottom: 1px solid black;
 }
 
-.col-md-5 h1 {
+.main-header .col-md-3 h1 {
     margin-bottom: 0px;
     font-size: 40px;
-    letter-spacing: 5px;
+    letter-spacing: 4px;
 }
 
-.col-md-5 p {
+.main-header .col-md-3 p {
     letter-spacing: 30px;
     font-size: 25px;
 }
 
-.col-md-7 ul {
+.main-header .col-md-9 ul {
     display: flex;
     list-style: none;
     flex-flow: row wrap;
@@ -66,22 +66,23 @@ header {
     padding: 20px 0;
 }
 
-.col-md-7 li {
+.main-header .col-md-9 li {
     padding: 15px 0;
 }
 
-.col-md-7 li a {
+.main-header .col-md-9 li a {
     display: block;
     color: black;
-    font-size: 26px;
+    font-size: 35px;
     padding: 0 30px;
 }
-.col-md-9 .text h1{
+
+.col-md-9 .text h1 {
     letter-spacing: 5px;
     text-align: center;
 }
 
-.col-md-7 .active {
+.main-header .col-md-9 .active {
     background-color: #d9534f;
     color: white;
     border-radius: 10px;
@@ -166,6 +167,12 @@ img:last-child {
 .col-md-9 {
     padding: 0;
     /*border-left: 3px solid blue;*/
+}
+
+.comments {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .img ul {

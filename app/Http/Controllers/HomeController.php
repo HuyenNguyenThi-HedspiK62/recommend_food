@@ -36,6 +36,7 @@ class HomeController extends Controller
 
     public function showallpost($id){
         $user = User::where('id', $id)->first();
+        //dd($user);
         return view('todos.allpost', compact('user'));
     }
 }

@@ -90,7 +90,7 @@ class TodosController extends Controller
             $monan->save();
             $user = Auth::user();
             $monan->users()->attach($user->id);
-            for($i=0; $i<sizeof($request->tennguyenlieu); ++$i){
+            for($i=0; $i<sizeof($request->tennguyenlieu); $i++){
                 $inder_id = Nguyenlieu::where('name', $request->tennguyenlieu[$i])->pluck('id');
                 if(!empty($inder_id)){
                     $monan->nguyenlieu()->attach($inder_id);
