@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Comment extends Model
 {
     //
-    protected $table = 'foods';
+    protected $table = 'comments';
     public $primaryKey = 'id';
     public $timestamps = true;
 

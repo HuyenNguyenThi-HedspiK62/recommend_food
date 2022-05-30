@@ -10,7 +10,7 @@ class Food extends Model
     public $primaryKey = 'id';
     public $timestamps = true;
     public function mean(){
-        return $this->belongsToMany('App\Mean', 'means_foods', 'food_id', 'mean_id');
+        return $this->belongsToMany('App\Mean', 'means_foods', 'mean_id', 'food_id');
     }
     public function nguyenlieu(){
         return $this->belongsToMany('App\Nguyenlieu', 'nguyenlieu_foods', 'food_id', 'nguyenlieu_id');

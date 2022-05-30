@@ -6,7 +6,21 @@
     <div><a class="showpostuser_button" href="{{route('showuserfood')}}">Món Ăn Của Mọi Người</a></div>
 </div>
 <head>
-@include('includes.head')
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{asset('asset/bootstrap-3.1.1-dist/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('asset/bootstrap-3.1.1-dist/css/bootstrap.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('asset/bootstrap-3.1.1-dist/css/bootstrap-theme.css.map')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('asset/bootstrap-3.1.1-dist/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('asset/css/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('asset/css/responsive.css')}}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script>
     $(document).ready(function() {
         var i = 1;
@@ -34,55 +48,7 @@
     });
     </script>
 </head>
-<style>
-input[type=text],
-select,
-textarea {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-family: monospace;
-}
 
-button {
-    font-family: monospace;
-}
-
-label,
-input[type=file] {
-    font-family: monospace;
-    font-size: 24px;
-}
-
-div {
-    border-radius: 5px;
-    background-color: white;
-}
-
-.submit-food {
-    padding: 30px 0px 50px 0px;
-    text-align: center;
-}
-
-h1 {
-    text-align: center;
-    padding-bottom: 20px;
-}
-
-.col-md-3 {
-    display: flex;
-    justify-content: end;
-    align-items: center;
-}
-.text-danger {
-    font-family: monospace;
-    font-size: 23px;
-}
-</style>
 <div class="container">
     <div>
         <h1 style="font-family: monospace;">Món ăn của bạn</h1>

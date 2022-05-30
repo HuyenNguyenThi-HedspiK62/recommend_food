@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Mean;
 use App\Food;
 use App\Nguyenlieu;
+use App\Comment;
 class TodosController extends Controller
 {
     //Do du lieu ra tab1
@@ -177,5 +178,33 @@ class TodosController extends Controller
             $foods[] = Food::where('id', $foodId[$k])->first();
         }
         return view('todos.food', compact('foods'));
+    }
+
+    //Lưu comment
+    public function addComment(Request $request)
+    {
+        //dd(Auth::user()->id);
+        //$foods = Food::where('id', '=', $request->id)->get();
+        $validate = Validator::make(
+            $request->all(),
+            [
+                'comment' => 'required|string',
+                'rate' => 'required',
+            ],
+            [
+                'comment.required'    => 'Hãy nhập Commnet của bạn',
+                'rate.required'   => 'Hãy chọn đánh giá của bạn',
+            ]
+        );
+        if ($validate->fails()) {
+            return redirect()->back()->withInput()->withErrors($validate);
+        }
+        //dd($request);
+        $comment = new Comment;
+        $comment->user_id = Auth::user()->id;
+        $comment->description = $request->comment;
+        $comment->rate = $request->input('rate');
+        $comment->save();
+        return view('todos.test', compact('foods'));
     }
 }

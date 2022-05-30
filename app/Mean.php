@@ -10,7 +10,7 @@ class Mean extends Model
     public $primaryKey = 'id';
     public $timestamps = true;
     public function food(){
-        return $this->belongsToMany('App\Food', 'means_foods', 'mean_id', 'food_id');
+        return $this->belongsToMany('App\Food', 'means_foods', 'food_id', 'mean_id');
     }
     public function type(){
         return $this->belongsTo('App\Type');

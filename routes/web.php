@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 /*
@@ -42,3 +41,4 @@ Route::get('upload', function () {
 });
 
 Route::post('/post', [App\Http\Controllers\TodosController::class, 'showpost'])->name('showpost');
+Route::get('/comment', [App\Http\Controllers\TodosController::class, 'addComment'])->name('comment');

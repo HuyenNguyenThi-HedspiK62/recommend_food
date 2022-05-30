@@ -1,4 +1,4 @@
-<div class="flex-center position-ref full-height">
+<div class="flex-center position-ref full-height" style="height: 50px;">
     @if (Route::has('login'))
     <div class="top-right links">
         @auth
