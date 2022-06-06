@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use App\Mean;
+use App\User;
+use App\MeanFood;
 use App\Food;
 use App\Nguyenlieu;
 use App\Comment;
@@ -15,18 +17,30 @@ class TodosController extends Controller
     //Do du lieu ra tab1
     public function getTab1()
     {
-        $mean = Mean::where('type_id', 1)->inRandomOrder()->paginate(4, ['*'], 'meal');
-        $spe = Mean::where('type_id', 2)->inRandomOrder()->paginate(4, ['*'], 'spe');
-        $chay = Mean::where('type_id', 3)->inRandomOrder()->paginate(4, ['*'], 'chay');
+        $mean = Mean::where('type_id', 1)
+                    ->inRandomOrder()
+                    ->paginate(4, ['*'], 'meal');
+        $spe = Mean::where('type_id', 2)
+                    ->inRandomOrder()
+                    ->paginate(4, ['*'], 'spe');
+        $chay = Mean::where('type_id', 3)
+                    ->inRandomOrder()
+                    ->paginate(4, ['*'], 'chay');
         return view('todos.tab1', compact('mean', 'spe', 'chay'));
     }
 
     //Do du lieu ra tab2
     public function getTab2()
     {
-        $mean = Mean::where('type_id', 1)->inRandomOrder()->paginate(4, ['*'], 'meal');
-        $spe = Mean::where('type_id', 2)->inRandomOrder()->paginate(4, ['*'], 'spe');
-        $chay = Mean::where('type_id', 3)->inRandomOrder()->paginate(4, ['*'], 'chay');
+        $mean = Mean::where('type_id', 1)
+                    ->inRandomOrder()
+                    ->paginate(4, ['*'], 'meal');
+        $spe = Mean::where('type_id', 2)
+                    ->inRandomOrder()
+                    ->paginate(4, ['*'], 'spe');
+        $chay = Mean::where('type_id', 3)
+                    ->inRandomOrder()
+                    ->paginate(4, ['*'], 'chay');
         return view('todos.tab2', compact('mean', 'spe', 'chay'));
     }
 
@@ -53,9 +67,15 @@ class TodosController extends Controller
     //Do du lieu ra trang chu
     public function getdata()
     {
-        $type1 = Mean::where('type_id', 1)->inRandomOrder()->paginate(3, ['*'], 'meal');
-        $type2 = Mean::where('type_id', 2)->inRandomOrder()->paginate(3, ['*'], 'spe');
-        $type3 = Mean::where('type_id', 3)->inRandomOrder()->paginate(3, ['*'], 'chay');
+        $type1 = Mean::where('type_id', 1)
+                    ->inRandomOrder()
+                    ->paginate(3, ['*'], 'meal');
+        $type2 = Mean::where('type_id', 2)
+                    ->inRandomOrder()
+                    ->paginate(3, ['*'], 'spe');
+        $type3 = Mean::where('type_id', 3)
+                    ->inRandomOrder()
+                    ->paginate(3, ['*'], 'chay');
         $nguyenlieu = Nguyenlieu::get();
         return view('welcome', compact('type1', 'type2', 'type3', 'nguyenlieu'));
     }
@@ -181,10 +201,9 @@ class TodosController extends Controller
     }
 
     //Lưu comment
-    public function addComment(Request $request)
+    public function addComment(Request $request, $stt)
     {
-        //dd(Auth::user()->id);
-        //$foods = Food::where('id', '=', $request->id)->get();
+        $meal = MeanFood::where('food_id', '=', $stt)->pluck('mean_id')->all();
         $validate = Validator::make(
             $request->all(),
             [
@@ -199,12 +218,25 @@ class TodosController extends Controller
         if ($validate->fails()) {
             return redirect()->back()->withInput()->withErrors($validate);
         }
-        //dd($request);
-        $comment = new Comment;
-        $comment->user_id = Auth::user()->id;
-        $comment->description = $request->comment;
-        $comment->rate = $request->input('rate');
-        $comment->save();
-        return view('todos.test', compact('foods'));
+        for ($i=0; $i<count($meal); $i++) {
+            $comment = new Comment;
+            $comment->user_id = Auth::user()->id;
+            $comment->food_id = $stt;
+            $comment->meal_id = $meal[$i];
+            $comment->description = $request->comment;
+            $comment->rate = $request->input('rate');
+            $comment->save();
+        }
+        return redirect()->back();
+    }
+
+    public function showuserfood(){
+        $users = User::get();
+        return view('todos.user_food', compact('users'));
+    }
+
+    public function showallpost($id){
+        $user = User::where('id', $id)->first();
+        return view('todos.allpost', compact('user'));
     }
 }

@@ -5,7 +5,6 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 class Mean extends Model
 {
-    //
     protected $table = 'means';
     public $primaryKey = 'id';
     public $timestamps = true;

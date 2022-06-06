@@ -1,10 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div><a class="showpost_button" href="/home/{{$user->id}}">Món Ăn Của Bạn</a></div>
-    <div><a class="showpostuser_button" href="{{route('showuserfood')}}">Món Ăn Của Mọi Người</a></div>
-</div>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -50,6 +46,12 @@
 </head>
 
 <div class="container">
+    <div>
+        <a class="showpost_button" href="/home/{{$user->id}}">Món Ăn Của Bạn</a>
+    </div>
+    <div>
+        <a class="showpostuser_button" href="{{ route('showuserfood') }}">Món Ăn Của Mọi Người</a>
+    </div>
     <div>
         <h1 style="font-family: monospace;">Món ăn của bạn</h1>
     </div>

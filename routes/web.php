@@ -33,12 +33,15 @@ Route::get('/', [App\Http\Controllers\TodosController::class, 'getdata']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/home/{id}', [App\Http\Controllers\HomeController::class, 'showallpost'])->name('showallpost');
-Route::post('/home/user_food', [App\Http\Controllers\HomeController::class, 'showuserfood'])->name('showuserfood');
+Route::get('/home/{id}', [App\Http\Controllers\TodosController::class, 'showallpost']);
+
+Route::get('/user_food', [App\Http\Controllers\TodosController::class, 'showuserfood'])->name('showuserfood');
 
 Route::get('upload', function () {
     return view('todos.post');
 });
 
 Route::post('/post', [App\Http\Controllers\TodosController::class, 'showpost'])->name('showpost');
-Route::get('/comment', [App\Http\Controllers\TodosController::class, 'addComment'])->name('comment');
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/comment/{stt}', [App\Http\Controllers\TodosController::class, 'addComment'])->name('comment');
+});

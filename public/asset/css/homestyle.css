@@ -169,10 +169,18 @@ img:last-child {
     /*border-left: 3px solid blue;*/
 }
 
+.fa {
+    font-size: 30px;
+}
+
 .comments {
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
+}
+
+.comments span {
+    font-size: 20px;
 }
 
 .img ul {

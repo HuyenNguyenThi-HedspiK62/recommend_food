@@ -38,10 +38,10 @@ class User extends Authenticatable
     ];
 
     public function foods(){
-        return $this->belongsToMany('App\Food', 'users_foods', 'user_id', 'food_id');
+        return $this->belongsToMany(Food::class, 'users_foods');
     }
 
     public function comments(){
-        return $this->hasMany('App\Comment');
+        return $this->hasMany(Comment::class);
     }
 }
