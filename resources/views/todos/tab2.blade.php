@@ -46,7 +46,7 @@
                                     </a>
                                 </li>
                             </div>
-                            <div class="comments">
+                            {{-- <div class="comments">
                                 <div class="comment-icon">
                                     <span>13</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
@@ -59,7 +59,7 @@
                                     <span>13</span>
                                     <i class="fa fa-thumbs-down"></i>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                         @endforeach
                     </ul>
@@ -84,7 +84,7 @@
                                     </a>
                                 </li>
                             </div>
-                            <div class="comments">
+                            {{-- <div class="comments">
                                 <div class="comment-icon">
                                     <span>13</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
@@ -97,7 +97,7 @@
                                     <span>13</span>
                                     <i class="fa fa-thumbs-down"></i>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                         @endforeach
                     </ul>
@@ -122,7 +122,7 @@
                                     </a>
                                 </li>
                             </div>
-                            <div class="comments">
+                            {{-- <div class="comments">
                                 <div class="comment-icon">
                                     <span>13</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
@@ -134,12 +134,36 @@
                                     <span>13</span>
                                     <i class="fa fa-thumbs-down"></i>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                         @endforeach
                     </ul>
                 </div>
                 <div class="row_link">{{$chay->links()}}</div>
+            </div>
+        </div>
+        <div class=selection3>
+            <div class="container">
+                <div class="text">
+                    <h1>Bữa Ăn Được Yêu Thích</h1>
+                </div>
+                <div class="image">
+                    <ul>
+                        @foreach($chay as $chays)
+                        <div class="food">
+                            <div>
+                                <li>
+                                    <a href="/todos/food/{{$chays->id}}">
+                                        <img src="/asset/image/{{$chays->image}}"
+                                        class="img-responsive">
+                                    </a>
+                                </li>
+                            </div>
+                        </div>
+                        @endforeach
+                    </ul>
+                </div>
+                {{-- <div class="row_link">{{$chay->links()}}</div> --}}
             </div>
         </div>
     </div>

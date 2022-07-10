@@ -49,7 +49,7 @@
                                     </a>
                                 </li>
                             </div>
-                            <div class="comments">
+                            {{-- <div class="comments">
                                 <div class="comment-icon">
                                     <span>13</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
@@ -61,7 +61,7 @@
                                     <span>13</span>
                                     <i class="fa fa-thumbs-down"></i>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                         @endforeach
                     </ul>
@@ -86,7 +86,7 @@
                                     </a>
                                 </li>
                             </div>
-                            <div class="comments">
+                            {{-- <div class="comments">
                                 <div class="comment-icon">
                                     <span>13</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
@@ -99,7 +99,7 @@
                                     <span>13</span>
                                     <i class="fa fa-thumbs-down"></i>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                         @endforeach
                     </ul>
@@ -125,7 +125,7 @@
                                     </a>
                                 </li>
                             </div>
-                            <div class="comments">
+                            {{-- <div class="comments">
                                 <div class="comment-icon">
                                     <span>13</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
@@ -138,7 +138,7 @@
                                     <span>13</span>
                                     <i class="fa fa-thumbs-down"></i>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                         @endforeach
                     </ul>

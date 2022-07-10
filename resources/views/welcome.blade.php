@@ -49,20 +49,32 @@
                                             </a>
                                         </li>
                                     </div>
-                                    <div class="comments">
+                                    {{-- <div class="comments">
                                         <div class="comment-icon">
-                                            <span>13</span>
+                                            <span>{{ count($type_1->comment) }}</span>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
                                             <path d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
                                             </svg>
                                         </div>
                                         <div class="like-icon">
-                                            <span>14</span>
+                                            @if(count($type_1->comment))
+                                                @foreach($type_1->comment as $comment)
+                                                    {{ $comment->rate }}
+                                                @endforeach
+                                            @else
+                                                <span>0</span>
+                                            @endif
                                             <i class="fa fa-thumbs-up"></i>
-                                            <span>0</span>
+                                            @if(count($type_1->comment))
+                                                @foreach($type_1->comment as $comment)
+                                                <span>{{ $comment->rate }}</span>
+                                                @endforeach
+                                            @else
+                                                <span>0</span>
+                                            @endif
                                             <i class="fa fa-thumbs-down"></i>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                                 @endforeach
                             </ul>
@@ -83,20 +95,32 @@
                                             </a>
                                         </li>
                                     </div>
-                                    <div class="comments">
+                                    {{-- <div class="comments">
                                         <div class="comment-icon">
-                                            <span>13</span>
+                                            <span>{{ count($type_2->comment) }}</span>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
                                             <path d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
                                             </svg>
                                         </div>
                                         <div class="like-icon">
-                                            <span>13</span>
+                                            @if(count($type_2->comment))
+                                                @foreach($type_2->comment as $comment)
+                                                    {{ $comment->rate }}
+                                                @endforeach
+                                            @else
+                                                <span>0</span>
+                                            @endif
                                             <i class="fa fa-thumbs-up"></i>
-                                            <span>13</span>
+                                            @if(count($type_2->comment))
+                                                @foreach($type_2->comment as $comment)
+                                                    {{ $comment->rate }}
+                                                @endforeach
+                                            @else
+                                                <span>0</span>
+                                            @endif
                                             <i class="fa fa-thumbs-down"></i>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                                 @endforeach
                             </ul>
@@ -115,20 +139,32 @@
                                             </a>
                                         </li>
                                     </div>
-                                    <div class="comments">
+                                    {{-- <div class="comments">
                                         <div class="comment-icon">
-                                            <span>13</span>
+                                            <span>{{ count($type_3->comment) }}</span>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
                                             <path d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
                                             </svg>
                                         </div>
                                         <div class="like-icon">
-                                            <span>13</span>
+                                            @if(count($type_3->comment))
+                                                @foreach($type_3->comment as $comment)
+                                                    {{ $comment->rate }}
+                                                @endforeach
+                                            @else
+                                                <span>0</span>
+                                            @endif
                                             <i class="fa fa-thumbs-up"></i>
-                                            <span>13</span>
+                                            @if(count($type_3->comment))
+                                                @foreach($type_3->comment as $comment)
+                                                    {{ $comment->rate }}
+                                                @endforeach
+                                            @else
+                                                <span>0</span>
+                                            @endif
                                             <i class="fa fa-thumbs-down"></i>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                                 @endforeach
                             </ul>

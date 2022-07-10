@@ -14,9 +14,6 @@
         <div class="container">
             <div class="row">
                 @foreach($users as $user)
-                    @if ($user->foods->isEmpty())
-                        <div style="height: 250px; align-items: center; justify-content:center; display:flex;"><p style="color: red; font-family: monospace; font-size: 20px; font-weight: bold;">Chưa đăng món ăn nào!</p></div>
-                    @else
                     @foreach($user->foods as $f)
                     <div class="col-md-5" style="padding: 50px 0px;">
                         <img class="img_responsive" style="height: 350px; width: 350px; border-radius: 10px;"
@@ -84,9 +81,9 @@
                                 </div>
                             </div>
                         @endforeach
+                        <h4 style="float:right; margin: 0; font-weight: bold;">Đăng bởi: {{$user->name}}</h4>
                     </div>
                     @endforeach
-                    @endif
                 @endforeach
             </div>
         </div>

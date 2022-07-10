@@ -15,6 +15,6 @@ class Mean extends Model
         return $this->belongsTo('App\Type');
     }
     public function comment(){
-        return $this->hasMany('App\Comment');
+        return $this->hasMany('App\Comment', 'meal_id', 'id');
     }
 }

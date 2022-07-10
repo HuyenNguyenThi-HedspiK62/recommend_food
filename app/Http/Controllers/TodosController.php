@@ -68,16 +68,34 @@ class TodosController extends Controller
     public function getdata()
     {
         $type1 = Mean::where('type_id', 1)
-                    ->inRandomOrder()
+                    //->inRandomOrder()
                     ->paginate(3, ['*'], 'meal');
+        $listMeals1 = $type1->items();
+        
+        //dd($listMeals);
+        // dd($listMeal[0]->food());
+        // $comments1 = DB::table('comments')
+        //             ->whereIn('food_id', $foodId)
+        //             //->groupBy('user_id')
+        //             ->get()
+        //             ->toArray();
+        // $totalComments1 = count($comments1);
+        // for($i = 0; $i < sizeof($comments1); $i++){
+        //     $rate[] = $comments1[$i]->rate;
+        // }
+        // $countRate = array_count_values($rate);
+        // $dislike1 = $countRate[0];
+        // $like1 = $countRate[1];
         $type2 = Mean::where('type_id', 2)
-                    ->inRandomOrder()
+                    //->inRandomOrder()
                     ->paginate(3, ['*'], 'spe');
+        $listMeals2 = $type2->items();
         $type3 = Mean::where('type_id', 3)
                     ->inRandomOrder()
                     ->paginate(3, ['*'], 'chay');
+        $listMeals3 = $type3->items();
         $nguyenlieu = Nguyenlieu::get();
-        return view('welcome', compact('type1', 'type2', 'type3', 'nguyenlieu'));
+        return view('welcome', compact('type1', 'type2', 'type3', 'nguyenlieu', 'listMeals1', 'listMeals2', 'listMeals3'));
     }
 
     //show món ăn mà user post lên
@@ -178,6 +196,8 @@ class TodosController extends Controller
         for ($i = 0; $i < count($food_id); $i++) {
             $foods[] = Food::where('id', $food_id[$i])->first();
         }
+        //dd($food_id);
+        //$comment = DB::table('comments')->where()
         return view('todos.food', compact('foods'));
     }
 
@@ -203,7 +223,6 @@ class TodosController extends Controller
     //Lưu comment
     public function addComment(Request $request, $stt)
     {
-        $meal = MeanFood::where('food_id', '=', $stt)->pluck('mean_id')->all();
         $validate = Validator::make(
             $request->all(),
             [
@@ -218,20 +237,17 @@ class TodosController extends Controller
         if ($validate->fails()) {
             return redirect()->back()->withInput()->withErrors($validate);
         }
-        for ($i=0; $i<count($meal); $i++) {
-            $comment = new Comment;
-            $comment->user_id = Auth::user()->id;
-            $comment->food_id = $stt;
-            $comment->meal_id = $meal[$i];
-            $comment->description = $request->comment;
-            $comment->rate = $request->input('rate');
-            $comment->save();
-        }
+        $comment = new Comment;
+        $comment->user_id = Auth::user()->id;
+        $comment->food_id = $stt;
+        $comment->description = $request->comment;
+        $comment->rate = $request->input('rate');
+        $comment->save();
         return redirect()->back();
     }
 
     public function showuserfood(){
-        $users = User::get();
+        $users = User::all()->except(Auth::id());
         return view('todos.user_food', compact('users'));
     }
 
