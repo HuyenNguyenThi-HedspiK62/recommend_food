@@ -29,12 +29,11 @@
                                 </div>
                                 
                                 <div class="like-icon">
-                                    <span>{{($f->comments)}}</span>
+                                    <span>{{($f->like)}}</span>
                                     <i class="fa fa-thumbs-up"></i>
-                                    {{-- <span>{{($f->comments->rate == 0)}}</span> --}}
+                                    <span>{{($f->dislike)}}</span>
                                     <i class="fa fa-thumbs-down"></i>
                                 </div>
-                                
                             </div>
                         </div>
                         <div class="col-md-7" style="padding: 30px 0px;">

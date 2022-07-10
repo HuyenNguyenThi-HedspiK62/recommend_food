@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Database\Eloquent\Builder;
 use App\Mean;
 use App\User;
 use App\MeanFood;
@@ -194,10 +195,14 @@ class TodosController extends Controller
     {
         $food_id = DB::table('means_foods')->where('mean_id', $stt)->pluck('food_id');
         for ($i = 0; $i < count($food_id); $i++) {
-            $foods[] = Food::where('id', $food_id[$i])->first();
+            $foods[] = Food::where('id', $food_id[$i])
+            ->withCount(['comments as like' => function (Builder $query) {
+                $query->where('rate', 1);
+            }, 'comments as dislike' => function (Builder $query) {
+                $query->where('rate', 0);
+            }])
+            ->first();
         }
-        //dd($food_id);
-        //$comment = DB::table('comments')->where()
         return view('todos.food', compact('foods'));
     }
 
