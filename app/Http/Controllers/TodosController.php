@@ -71,32 +71,14 @@ class TodosController extends Controller
         $type1 = Mean::where('type_id', 1)
                     //->inRandomOrder()
                     ->paginate(3, ['*'], 'meal');
-        $listMeals1 = $type1->items();
-        
-        //dd($listMeals);
-        // dd($listMeal[0]->food());
-        // $comments1 = DB::table('comments')
-        //             ->whereIn('food_id', $foodId)
-        //             //->groupBy('user_id')
-        //             ->get()
-        //             ->toArray();
-        // $totalComments1 = count($comments1);
-        // for($i = 0; $i < sizeof($comments1); $i++){
-        //     $rate[] = $comments1[$i]->rate;
-        // }
-        // $countRate = array_count_values($rate);
-        // $dislike1 = $countRate[0];
-        // $like1 = $countRate[1];
         $type2 = Mean::where('type_id', 2)
                     //->inRandomOrder()
                     ->paginate(3, ['*'], 'spe');
-        $listMeals2 = $type2->items();
         $type3 = Mean::where('type_id', 3)
-                    ->inRandomOrder()
+                    //->inRandomOrder()
                     ->paginate(3, ['*'], 'chay');
-        $listMeals3 = $type3->items();
         $nguyenlieu = Nguyenlieu::get();
-        return view('welcome', compact('type1', 'type2', 'type3', 'nguyenlieu', 'listMeals1', 'listMeals2', 'listMeals3'));
+        return view('welcome', compact('type1', 'type2', 'type3', 'nguyenlieu'));
     }
 
     //show món ăn mà user post lên
