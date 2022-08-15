@@ -53,7 +53,7 @@
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" @if(old('rate') === "0") checked @endif type="radio" name="rate" id="unlike" value="0" class="@error('unlike') is-invalid @enderror">
-                                <label class="form-check-label" for="inlineRadio2">Unlike</label>
+                                <label class="form-check-label" for="inlineRadio2">Dislike</label>
                             </div>
                             @error('rate')
                                 <p class="text-danger">{{$message}}</p>

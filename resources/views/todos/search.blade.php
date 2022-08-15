@@ -8,7 +8,7 @@
 <body>
 @include('includes.user')
     <div class="header">
-    @include('includes.header')
+        @include('includes.header')
         <div class="banner-header">
             <div class="container">
                 <div class="header-title">
@@ -44,7 +44,7 @@
                 @if ($mean->isEmpty())
                     <p style="color: red; text-align: center; font-family: monospace; font-size: 20px; font-weight: bold;">Không có bữa ăn phù hợp</p>
                 @else
-                <div class="image">
+                <div class="image-search">
                 @foreach($mean as $means)
                     <div style="margin-right: 30px;">
                         <a href="/todos/food/{{$means->id}}"><img src="/asset/image/{{$means->image}}"
@@ -65,7 +65,7 @@
                 @if ($spe->isEmpty())
                     <p style="color: red; text-align: center; font-family: monospace; font-size: 20px; font-weight: bold;">Không có bữa ăn phù hợp</p>
                 @else
-                <div class="image">
+                <div class="image-search">
                 @foreach($spe as $spes) 
                     <div style="margin-right: 30px;">
                         <a href="/todos/food/{{$spes->id}}"><img src="/asset/image/{{$spes->image}}"
@@ -88,7 +88,7 @@
                         <p style="color: red; text-align: center; font-family: monospace; font-size: 20px; font-weight: bold;">Không có bữa ăn phù hợp</p>
                     </div>
                 @else
-                <div class="image">
+                <div class="image-search">
                 @foreach($chay as $chays)
                     <div style="margin-right: 30px;">
                         <a href="/todos/food/{{$chays->id}}"><img src="/asset/image/{{$chays->image}}"
@@ -101,28 +101,26 @@
                 <div class="row_link">{{$chay->links()}}</div>
             </div>
         </div>
-        <div class=selection4>
-            <div class="container">
-                <div class="text">
-                    <h1>Đề Xuất Món Ăn</h1>
-                </div>
-                <div>
-                    @if ($foods->isEmpty())
-                        <div style="color: red; text-align: center; font-family: monospace; font-size: 20px; font-weight: bold;">Không có món ăn được đề xuất</div>
-                    @else
-                    @foreach($foods as $food)
-                        <div class="image">
-                            <div style="margin-right: 30px;">
-                                <a href="/todos/fooddetail/{{$food->id}}"><img src="/asset/image/{{$food->image}}"
-                                        style="margin-bottom: 10px;" class="img-responsive"></a>
-                                <p style="font-family: monospace; font-size: 17px; font-weight: bold;">{{$food->name}}</p>
-                            </div>
-                        <div>
-                    @endforeach
-                    @endif
-                </div>
-                <div class="row_link">{{$foods->links()}}</div>
+        <div class="container">
+            <div class="text">
+                <h1>Đề Xuất Món Ăn</h1>
             </div>
+            <div>
+                @if ($foods->isEmpty())
+                    <div style="color: red; text-align: center; font-family: monospace; font-size: 20px; font-weight: bold;">Không có món ăn được đề xuất</div>
+                @else
+                <div class="image-search">
+                @foreach($foods as $food)
+                    <div style="margin-right: 30px;">
+                        <a href="/todos/fooddetail/{{$food->id}}"><img src="/asset/image/{{$food->image}}"
+                                style="margin-bottom: 10px;" class="img-responsive"></a>
+                        <p style="font-family: monospace; font-size: 17px; font-weight: bold;">{{$food->name}}</p>
+                    </div>
+                @endforeach
+                <div>
+                @endif
+            </div>
+            {{-- <div class="row_link">{{$foods->links()}}</div> --}}
         </div>
     </div>
     <script>
